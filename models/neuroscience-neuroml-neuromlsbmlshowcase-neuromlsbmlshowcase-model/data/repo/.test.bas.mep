@@ -1,0 +1,12 @@
+system: Test BallAndStick
+
+experiments:
+    soma:
+        expected:
+            spike times: [118.5, 533.8000000000001]
+    mid:
+        expected:
+            spike times: [125.15, 527.475]
+    dend_tip:
+        expected:
+            spike times: [133.1, 506.07500000000005]

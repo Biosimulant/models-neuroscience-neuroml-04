@@ -1,0 +1,37 @@
+/PsyNeuLink/show_graph OUTPUT
+/NeuroML2/*.dat
+*_netpyne.py
+/NeuroML2/*.mod
+/NeuroML2/fn1_flat.cell.json
+/NeuroML2/i1.input.json
+/NeuroML2/net1.gv
+/NeuroML2/syn1_flat.synapse.json
+/NeuroML2/test_cog_model/LEMS_SimWC.xml
+/NeuroML2/test_cog_model/*.gv*
+/NeuroML2/LEMS_SimMcCPNet.xml
+/NeuroML2/*.gv*
+/NeuroML2/report*.txt
+/PsyNeuLink/tests/show_graph OUTPUT
+/NeuroML2/LEMS_SimABC_nrn.py
+/NeuroML2/x86_64
+/NeuroML2/LEMS_FitzHughNagumo.png
+/NeuroML2/LEMS_SimABC.png
+/NeuroML2/LEMS_SimMcCPNet.png
+/NeuroML2/__pycache__
+/NeuroML2/show_graph OUTPUT
+/PsyNeuLink/model_with_branching_graph.converted.py
+/PsyNeuLink/model_with_branching_graph.json
+/NeuroML2/LEMS_SimABCD.png
+/NeuroML2/clean.sh
+/NeuroML2/FN.json
+/NeuroML2/FN.net.nml
+/NeuroML2/FN__lems.xml
+/NeuroML2/LEMS_SimFN.xml
+/NeuroML2/LEMS_SimFN.png
+/NeuroML2/*_nrn.py
+/PsyNeuLink/*.dat
+/PsyNeuLink/clean.sh
+/NeuroML2/FN.bids-mdf.highlevel.json
+/NeuroML2/run_pnl_ABC.py
+/NeuroML2/run_pnl_ABCD.py
+/NeuroML2/run_pnl_McCPNet.py

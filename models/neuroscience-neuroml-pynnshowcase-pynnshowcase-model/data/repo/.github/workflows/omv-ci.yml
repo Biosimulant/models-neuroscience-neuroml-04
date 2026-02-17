@@ -1,0 +1,54 @@
+name: Continuous builds
+
+on:
+  push:
+    branches: [ master, development, experimental ]
+  pull_request:
+    branches: [ master, development, experimental ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ "3.10", "3.12", "3.13" ] # Brian no longer supported on py3.9!
+        engine: [ jNeuroML, jNeuroML_NEURON, jNeuroML_PyNN_NEURON, jNeuroML_validate, PyNN_NEURON, PyNN_Nest, PyNN_NeuroML, PyNN_Brian2]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python  ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version:  ${{ matrix.python-version }}
+        
+    - name: Install OMV
+      run: |
+        pip install git+https://github.com/OpenSourceBrain/osb-model-validation
+        
+    - name: Install additional packages
+      run: |
+      
+        pip install matplotlib "cython<3.1.0"  # let omv handle other deps...
+
+        
+    - name: Run OMV tests on engine ${{ matrix.engine }}
+      run: |
+        omv all -V --engine=${{ matrix.engine }}
+        
+    - name: Regenerate
+      run: |
+        export JNML_HOME=/home/runner/jnml/jNeuroMLJar
+        export PATH=$JNML_HOME:$PATH
+        omv install PyNN # required for regeneration...
+        omv install pyNeuroML # required for regeneration...
+        omv install jNeuroML
+        which jnml
+        ./regenerate.sh
+      
+
+    - name: OMV final version info
+      run: |
+        omv list -V # list installed engines

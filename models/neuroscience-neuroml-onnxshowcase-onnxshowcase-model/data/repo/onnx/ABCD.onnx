@@ -1,0 +1,18 @@
+:¥
+
+input0A_outA"Sigmoid
+
+A_outB_outB"Sigmoid
+
+A_outC_outC"Sigmoid
+
+B_out
+C_outD_outD"AddABCDZ
+input0
+
+
+b
+D_out
+
+
+B

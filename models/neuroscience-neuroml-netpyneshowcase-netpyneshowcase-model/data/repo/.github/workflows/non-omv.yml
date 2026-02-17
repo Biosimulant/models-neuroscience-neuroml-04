@@ -1,0 +1,57 @@
+name: Regenerate files
+
+on:
+  push:
+    branches: [ master, development, experimental ]
+  pull_request:
+    branches: [ master, development, experimental ]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.runs-on }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ 3.9, "3.12" ]
+        runs-on: [ ubuntu-latest, macos-latest ]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python  ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version:  ${{ matrix.python-version }}
+
+    - name: Install HDF5 for pytables on macos-latest
+      if: ${{ matrix.runs-on == 'macos-latest' }}
+      run: |
+        brew install hdf5
+
+    - name: Install OMV
+      run: |
+        pip install git+https://github.com/OpenSourceBrain/osb-model-validation
+        pip install scipy sympy matplotlib cython pandas tables
+      
+
+    - name: Regenerate and test
+      run: |
+        omv install neuron
+        omv install netpyne
+        omv install pyNeuroML
+
+        pip list
+
+        export NEURON_HOME=$pythonLocation
+
+        omv list -V
+        which nrnivmodl
+
+        ./regenerateAndTest.sh  # includes test of UI scripts
+
+
+    - name: OMV final version info
+      run: |
+        omv list -V # list installed engines
+        env

@@ -1,0 +1,109 @@
+<!-- Generated on Jun 24, 2016 1:39:32 PM from  NESTML-model "iaf_psc_alpha_nestml".-->
+
+<Lems xmlns="http://www.neuroml.org/lems/0.7.4"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.neuroml.org/lems/0.7.4 https://raw.githubusercontent.com/LEMS/LEMS/master/Schemas/LEMS/LEMS_v0.7.4.xsd"
+      description="Generated from NESTML...">
+
+
+    <Include file="units_dimensions.xml"/>
+
+    <ComponentType name="iaf_psc_alpha_nestml">
+        <!--Following elements are not supported or required by LEMS:-->
+        <!--Not supported function call(s) found in differential equation of "V" in lines <12,4> to <12,108>.-->
+
+        <Parameter name="I_e" dimension="current"/>
+
+        <DerivedParameter name="V_reset" dimension="voltage" value="-constant70mV-E_L"/>
+        <DerivedParameter name="Theta" dimension="voltage" value="-constant55mV-E_L"/>
+        
+        <Constant name="V_init" dimension="voltage" value="0mV"/>
+        <Constant name="C_m" dimension="capacitance" value="250pF"/>
+        <Constant name="Tau" dimension="time" value="10ms"/>
+        <Constant name="tau_syn_in" dimension="time" value="7ms"/>
+        <Constant name="tau_syn_ex" dimension="time" value="10ms"/>
+        <Constant name="t_ref" dimension="time" value="2ms"/>
+        <Constant name="E_L" dimension="voltage" value="-70mV"/>
+        <Constant name="constant70mV" dimension="voltage" value="70mV"/>
+        <Constant name="constant55mV" dimension="voltage" value="55mV"/>
+        <Constant name="RefractoryCounts" dimension="none" value="200"/>
+        
+        <Constant name="LONG_TIME_AGO" dimension="time" value="-1e6ms"/>
+        
+        <Constant name="constant100pA" dimension="current" value="100pA"/>
+
+        <EventPort name="ex_spikes" direction="in"/>
+        <EventPort name="in_spikes" direction="in"/>
+        <!--<EventPort name="currents" direction="in"/>-->
+        <EventPort name="spike" direction="out"/>
+        
+        <Exposure name="I_shape_ex" dimension="current"/>
+        <Exposure name="I_shape_in" dimension="current"/>
+
+        <Dynamics>
+            <StateVariable name="V" dimension="voltage"/>
+            <StateVariable name="r" dimension="none"/>
+            
+            <StateVariable name="lastSpikeTime" dimension="time"/>
+            
+            <StateVariable name="last_ex_input_time" dimension="time"/>
+            <StateVariable name="last_in_input_time" dimension="time"/>
+            <StateVariable name="offset_ex_input" dimension="current"/>
+            <StateVariable name="offset_in_input" dimension="current"/>
+            
+            <StateVariable name="last_G_in" dimension="current"/>
+            
+            <StateVariable name="I_shape_ex" dimension="current" exposure="I_shape_ex"/>
+            <StateVariable name="I_shape_in" dimension="current" exposure="I_shape_in"/>
+              
+            <DerivedVariable name="V_m" dimension="voltage" value="V+E_L"/>
+
+            <OnStart>
+                <StateAssignment variable="V" value="V_init"/>
+                <StateAssignment variable="r" value="0"/>
+                <StateAssignment variable="last_ex_input_time" value="LONG_TIME_AGO"/>
+                <StateAssignment variable="last_in_input_time" value="LONG_TIME_AGO"/>
+            </OnStart>
+
+              
+            <Regime name="refractory">
+                <OnEntry>
+                    <StateAssignment variable="lastSpikeTime" value="t" />
+                    <StateAssignment variable="V" value="V_reset" />
+                    <StateAssignment variable="r" value="RefractoryCounts" />
+                </OnEntry>
+                <OnCondition test="r .eq. 0">
+                    <Transition regime="integrating" />
+                </OnCondition>
+                <OnCondition test="r .gt. 0">
+                    <StateAssignment variable="r" value="r - 1" />
+                </OnCondition>
+            </Regime>
+
+            <Regime name="integrating" initial="true">
+                <TimeDerivative variable="V" value="-1/Tau * V + 1/C_m * ( I_shape_ex + I_shape_in + I_e )" />
+                <OnEvent port="ex_spikes">
+                  <StateAssignment variable="last_ex_input_time" value="t"/>
+                  <StateAssignment variable="offset_ex_input" value="I_shape_ex"/>
+                </OnEvent>
+                <OnEvent port="in_spikes">
+                  <StateAssignment variable="last_in_input_time" value="t"/>
+                  <StateAssignment variable="offset_in_input" value="I_shape_in"/>
+                </OnEvent>
+                <OnCondition test="V .lt. Theta">
+                  <StateAssignment variable="I_shape_ex" value="(offset_ex_input + constant100pA) * (exp(1)/tau_syn_ex)*(t-last_ex_input_time)*exp(-1 * (t-last_ex_input_time)/tau_syn_ex)"/>
+                  <StateAssignment variable="I_shape_in" value="(offset_in_input - constant100pA) * (exp(1)/tau_syn_in)*(t-last_in_input_time)*exp(-1 * (t-last_in_input_time)/tau_syn_in)"/>
+                </OnCondition>
+                <OnCondition test="V .geq. Theta">
+                    <EventOut port="spike"/>
+                    <Transition regime="refractory" />
+                </OnCondition>
+            </Regime>
+
+        </Dynamics>
+    </ComponentType>
+
+    <Component id="iaf_psc_alpha_nestml_instance1" type="iaf_psc_alpha_nestml" I_e="0pA"/>
+    <Component id="iaf_psc_alpha_nestml_instance2" type="iaf_psc_alpha_nestml" I_e="1000pA"/>
+
+</Lems>

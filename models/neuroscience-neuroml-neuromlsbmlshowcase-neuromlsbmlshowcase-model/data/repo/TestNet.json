@@ -1,0 +1,73 @@
+{
+    "TestNet": {
+        "version": "NeuroMLlite v0.6.0",
+        "notes": "Current clamp input",
+        "parameters": {
+            "input_amp1": "0.05nA",
+            "input_amp2": "0.05nA"
+        },
+        "cells": {
+            "BallAndStick": {
+                "neuroml2_source_file": "BallAndStick.cell.nml"
+            }
+        },
+        "input_sources": {
+            "i_clamp_early": {
+                "parameters": {
+                    "amplitude": "input_amp1",
+                    "delay": "100ms",
+                    "duration": "100ms"
+                },
+                "neuroml2_input": "PulseGenerator"
+            },
+            "i_clamp_late": {
+                "parameters": {
+                    "amplitude": "input_amp2",
+                    "delay": "500ms",
+                    "duration": "100ms"
+                },
+                "neuroml2_input": "PulseGenerator"
+            }
+        },
+        "regions": {
+            "region1": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "width": 100.0,
+                "height": 100.0,
+                "depth": 100.0
+            }
+        },
+        "populations": {
+            "pop0": {
+                "size": 1,
+                "component": "BallAndStick",
+                "properties": {
+                    "color": "1 0 0"
+                },
+                "random_layout": {
+                    "region": "region1"
+                }
+            }
+        },
+        "inputs": {
+            "stim_soma": {
+                "input_source": "i_clamp_early",
+                "population": "pop0",
+                "percentage": 100,
+                "segment_ids": [
+                    0
+                ]
+            },
+            "stim_dend_tip": {
+                "input_source": "i_clamp_late",
+                "population": "pop0",
+                "percentage": 100,
+                "segment_ids": [
+                    9
+                ]
+            }
+        }
+    }
+}

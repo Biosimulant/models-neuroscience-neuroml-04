@@ -1,0 +1,57 @@
+
+name: Continuous build using OMV
+
+on:
+  push:
+    branches: [ master, development, experimental, test* ]
+  pull_request:
+    branches: [ master, development, experimental, test* ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ "3.10", "3.12" ]
+        engine: [ jNeuroML, jNeuroML_NEURON, jNeuroML_NetPyNE, jNeuroML_validate, NEURON, jNeuroML_Moose, "jNeuroML_Moose:4.0.0.dev20240411" ]
+        exclude:
+          - python-version: "3.12"
+            engine: jNeuroML_MOOSE  # MOOSE not yet working on py 3.12...
+          - python-version: "3.12"
+            engine: "jNeuroML_Moose:4.0.0.dev20240411"  # MOOSE not yet working on py 3.12...
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python  ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version:  ${{ matrix.python-version }}
+        
+    - name: Install numpy < 2 if necessary...
+      run: |
+        if [[  ${{ matrix.engine }} == *"MOOSE"* ]] || [[  ${{ matrix.engine }} == *"Moose"* ]]; then pip install "numpy<2" ; fi ;
+        pip list
+        
+    - name: Install OMV
+      run: |
+        pip install git+https://github.com/OpenSourceBrain/osb-model-validation
+        pip install scipy sympy matplotlib cython pandas tables
+        
+    - name: Install latest development pyNeuroML 
+      run: |
+         # Required for Moose reader, remove when latest merged to master in Moose and pyNeuroML
+         pip install git+https://github.com/NeuroML/pyNeuroML.git@development 
+         pip list
+        
+    - name: Run OMV tests on engine ${{ matrix.engine }}
+      run: |
+        omv all -V --engine=${{ matrix.engine }}
+        
+    - name: OMV final version info
+      run: |
+        omv list -V # list installed engines
+        env
+        

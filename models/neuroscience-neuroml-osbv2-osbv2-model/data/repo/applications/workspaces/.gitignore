@@ -1,0 +1,8 @@
+*.db
+.vscode
+.tox
+venv
+.venv
+.env
+.vscode
+**/*.pyc

@@ -1,0 +1,17 @@
+i386
+x86_64
+umac
+*.dll
+*.o
+*.c
+HHChannelAnalyser/*.dat
+parsemod/mod_to_nml_test*.ipynb
+parsemod/test/*.nml
+arm64
+/HH/*.dat
+/HH/report*.txt
+/HH/*_nrn.py
+/HH/*.hoc
+/HH/*.mod
+*_code.gen.so
+*_eden.py

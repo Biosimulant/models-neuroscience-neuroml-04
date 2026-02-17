@@ -1,0 +1,17 @@
+target: wc.ode
+engine: pyNEURON_XPP_LEMS
+
+mep: .test.wc.mep
+experiments:
+  spikes:
+    observables:
+      spike times:
+        file: 
+          path: output.dat
+          columns: [0,1]
+          scaling: [1000, 1]
+        spike detection: 
+          method: threshold
+          threshold: 0.53
+        tolerance: 0.009505703422053232
+

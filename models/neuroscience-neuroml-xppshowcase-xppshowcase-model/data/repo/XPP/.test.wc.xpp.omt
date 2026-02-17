@@ -1,0 +1,17 @@
+target: wc.ode
+engine: XPP
+
+mep: .test.wc.mep
+experiments:
+  spikes:
+    observables:
+      spike times:
+        file: 
+          path: output.dat
+          columns: [0,1]
+          scaling: [1, 1]
+        spike detection: 
+          method: threshold
+          threshold: 0.53
+        tolerance: 0.00
+

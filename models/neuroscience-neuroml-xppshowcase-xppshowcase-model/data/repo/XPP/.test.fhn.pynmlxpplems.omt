@@ -1,0 +1,17 @@
+target: fhn.ode
+engine: pyNEURON_XPP_LEMS
+
+mep: .test.fhn.mep
+experiments:
+  spikes:
+    observables:
+      spike times:
+        file: 
+          path: output.dat
+          columns: [0,1]
+          scaling: [1000, 1]
+        spike detection: 
+          method: threshold
+          threshold: 0.5
+        tolerance: 5.347593283418769e-08
+

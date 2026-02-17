@@ -1,0 +1,47 @@
+
+name: Continuous build using OMV
+
+on:
+  schedule:
+    - cron: "1 1 1 */2 *"
+  push:
+    branches: [ main, development, experimental ]
+  pull_request:
+    branches: [ main, development, experimental ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ 3.9, "3.11" ]
+        engine: [ XPP, jNeuroML, jNeuroML_Brian2, jNeuroML_XPP, pyNEURON_XPP_LEMS ]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python  ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version:  ${{ matrix.python-version }}
+        
+    - name: Install OMV
+      run: |
+        # experimental branch of pynml
+        # pip install git+https://github.com//NeuroML/pyNeuroML@experimental
+        pip install pyneuroml
+
+        #pip install git+https://github.com/OpenSourceBrain/osb-model-validation@test_xpp
+        pip install OSBModelValidation
+        
+        
+    - name: Run OMV tests on engine ${{ matrix.engine }}
+      run: |
+        omv all -V --engine=${{ matrix.engine }}
+        
+    - name: OMV final version info
+      run: |
+        omv list -V # list installed engines
+        env

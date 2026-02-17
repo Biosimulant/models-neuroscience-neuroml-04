@@ -1,0 +1,15 @@
+system: Expected times of concentrations for Ca pool
+
+experiments:
+  v:
+    expected:
+      spike times: [435.22]
+  one:
+    expected:
+      spike times: [396.86]
+  two:
+    expected:
+      spike times: [413.56]
+  three:
+    expected:
+      spike times: [416.37]

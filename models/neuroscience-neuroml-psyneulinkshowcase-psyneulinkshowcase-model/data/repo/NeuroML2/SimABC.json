@@ -1,0 +1,17 @@
+{
+    "SimABC": {
+        "version": "NeuroMLlite v0.2.1",
+        "network": "ABC.json",
+        "duration": 1.0,
+        "dt": 0.1,
+        "seed": 123,
+        "recordVariables": {
+            "OUTPUT": {
+                "all": "*"
+            },
+            "INPUT": {
+                "all": "*"
+            }
+        }
+    }
+}

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+        Test XSD for NineML v0.3
+-->
+
+<xs:schema targetNamespace="http://nineml.incf.org/9ML/0.3"
+    xmlns="http://nineml.incf.org/9ML/0.3"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+
+
+    <xs:element name="NineML" type="NineMLRoot">
+        <xs:annotation>
+            <xs:documentation>The root NineML element.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+
+    <xs:complexType name="NineMLRoot">
+        <xs:complexContent>
+            <xs:extension base="ComponentClassDefinitions">
+                <xs:sequence>
+                    <xs:element name="component" type="Component" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="structure" type="Structure" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="group" type="Group" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    
+    <xs:complexType name="ComponentClassDefinitions">
+
+        <xs:sequence>
+            <xs:element name="ComponentClass" type="ComponentClass" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+
+        <xs:attribute name="name" type="xs:string" use="optional"/>
+
+    </xs:complexType>
+    
+    
+    <!-- for Parameter, StateVariable etc. -->
+    <xs:complexType name="NamedDimensionalType">
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="dimension" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+    
+    <xs:complexType name="ComponentClass">
+    
+        <xs:sequence>
+            <xs:element name="Parameter" type="NamedDimensionalType" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="AnalogPort" type="AnalogPort" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="EventPort" type="EventPort" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Dynamics" type="Dynamics" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="Math">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="AnalogPort">
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="mode" type="xs:string" use="required"/>   <!-- Prob should be restriction to enum -->
+        <xs:attribute name="dimension" type="xs:string" use="required"/>
+         <!-- <xs:attribute name="op" type="xs:string" use="optional"/>  Prob should be restriction to enum -->
+    </xs:complexType>
+
+    <xs:complexType name="EventPort">
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="mode" type="xs:string" use="required"/>   <!-- Prob should be restriction to enum -->
+    </xs:complexType>
+
+    <xs:complexType name="Dynamics">
+        <xs:sequence>
+            <xs:element name="StateVariable" type="NamedDimensionalType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Alias" type="Alias" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Regime" type="Regime" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="Alias">
+        <xs:sequence>
+            <xs:element name="MathInline" type="Math" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="argument" type="xs:string" use="required"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="Regime">
+        <xs:sequence>
+            <xs:element name="TimeDerivative" type="TimeDerivative" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="OnCondition" type="OnCondition" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+
+
+    <xs:complexType name="TimeDerivative">
+        <xs:sequence>
+            <xs:element name="MathInline" type="Math" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+
+        <!--<xs:attribute name="independent_variable" type="xs:string" use="required"/>-->
+        <xs:attribute name="name" type="xs:string" use="optional"/>
+        <xs:attribute name="variable" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+    
+    <xs:complexType name="OnCondition">
+        <xs:sequence>
+            <xs:element name="Trigger" type="Trigger" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="StateAssignment" type="StateAssignment" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="EventOut" type="EventOut" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StateAssignment">
+        <xs:sequence>
+            <xs:element name="MathInline" type="Math" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="variable" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="Trigger">
+        <xs:sequence>
+            <xs:element name="MathInline" type="Math" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    <xs:complexType name="EventOut">
+        <xs:attribute name="port" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+
+
+
+
+    <xs:complexType name="Component">
+        <xs:sequence>
+            <xs:element name="definition" type="Definition" minOccurs="1"/>
+            <xs:element name="property" type="Property" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+
+
+
+    <xs:complexType name="Definition">
+        <xs:sequence>
+            <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/> <!-- Further elements will be specified!! -->
+        </xs:sequence>
+        <xs:attribute name="language" type="xs:string" use="required"/>
+    </xs:complexType>
+
+
+
+    <xs:complexType name="Property">
+        <xs:sequence>
+            <xs:element name="quantity" type="Quantity" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="Quantity">
+        <xs:sequence>
+            <xs:element name="value" type="Value" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Value">
+        <xs:sequence>
+            <xs:element name="scalar" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="unit" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="Structure">
+        <xs:sequence>
+            <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/> <!-- Further elements will be specified!! -->
+        </xs:sequence>
+
+        <xs:attribute name="name" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="Group">
+        <xs:sequence>
+            <xs:element name="population" type="Population" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="structure" type="Structure" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="set" type="Set" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="projection" type="Projection" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+
+        <xs:attribute name="name" type="xs:string" use="required"/>
+
+    </xs:complexType>
+
+
+
+    <xs:complexType name="Population">
+        <xs:sequence>
+            <xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="prototype" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="Set">
+        <xs:sequence>
+            <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/> <!-- Further elements will be specified!! -->
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="Projection">
+        <xs:sequence>
+            <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/> <!-- Further elements will be specified!! -->
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+
+</xs:schema>
+
+
+

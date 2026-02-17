@@ -1,0 +1,72 @@
+
+name: Continuous build using OMV
+
+on:
+  push:
+    branches: [ master, development, experimental ]
+  pull_request:
+    branches: [ master, development, experimental ]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.runs-on }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ "3.9", "3.11" ]
+        engine:
+           - "PyNEURON:7.8.2"
+           - "PyNEURON:8.0.0"
+           - "PyNEURON:8.1.0"
+           - "PyNEURON:8.2.2"
+        runs-on: [ubuntu-22.04, macos-latest ]
+        exclude:
+          - runs-on: "macos-latest"
+            engine: "PyNEURON:7.8.2"
+          - python-version: "3.11"
+            engine: "PyNEURON:7.8.2"
+          - python-version: "3.11"
+            engine: "PyNEURON:8.0.0"
+          - runs-on: "macos-latest"
+            engine: "PyNEURON:8.0.0"
+          - python-version: "3.11"
+            engine: "PyNEURON:8.1.0"
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python  ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version:  ${{ matrix.python-version }}
+
+    - name: Install HDF5 for pytables on macos-latest
+      if: ${{ matrix.runs-on == 'macos-latest' }}
+      run: |
+        brew install hdf5
+
+    - name: Install OMV
+      run: |
+        pip install git+https://github.com/OpenSourceBrain/osb-model-validation
+        pip install scipy sympy matplotlib "cython<3.1.0" pandas tables
+
+    - name: Install ${{ matrix.engine }}
+      run: |
+        omv install ${{ matrix.engine }}
+                
+    - name: Test HHChannelAnalyser
+      run: |
+        cd HHChannelAnalyser
+        nrnivmodl
+        python HHanalyse.py NaConductance -nogui
+
+    - name: OMV run tests on all reusing NEURON from ${{ matrix.engine }}
+      run: |
+        omv all -V
+
+    - name: OMV final version info
+      run: |
+        omv list -V # list installed engines  
+        pip list
+        env

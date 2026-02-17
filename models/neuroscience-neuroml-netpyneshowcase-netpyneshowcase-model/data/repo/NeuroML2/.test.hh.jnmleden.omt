@@ -1,0 +1,36 @@
+# Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation
+
+target: LEMS_HHSmall.xml
+engine: jNeuroML_EDEN
+mep: .test.hh.mep
+experiments:
+  v0:
+    observables:
+      spike times:
+        file:
+          path: Sim_HHSmall.PYR.v.dat
+          columns: [0,1]
+          scaling: [1000, 1000]
+        spike detection:
+          method: threshold
+        tolerance: 0.0001175226231050635
+  v1:
+    observables:
+      spike times:
+        file:
+          path: Sim_HHSmall.PYR.v.dat
+          columns: [0,2]
+          scaling: [1000, 1000]
+        spike detection:
+          method: threshold
+        tolerance: 0.00012449165905872983
+  v2:
+    observables:
+      spike times:
+        file:
+          path: Sim_HHSmall.PYR.v.dat
+          columns: [0,3]
+          scaling: [1000, 1000]
+        spike detection:
+          method: threshold
+        tolerance: 8.188666885023669e-05

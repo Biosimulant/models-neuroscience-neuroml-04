@@ -1,0 +1,32 @@
+{
+    "graphs": [
+        {
+            "name": "McCPNet_hl",
+            "notes": "Example of simplified McCulloch-Pitts based Network High Level (population/projection based) description",
+            "nodes": {
+                "McCPpop0": {
+                    "type": {
+                        "NeuroML": "mccp0"
+                    },
+                    "name": "McCPpop0",
+                    "parameters": {
+                        "size": 3
+                    },
+                    "functions": {}
+                },
+                "McCPpop1": {
+                    "type": {
+                        "NeuroML": "mccp0"
+                    },
+                    "name": "McCPpop1",
+                    "parameters": {
+                        "size": 3
+                    },
+                    "functions": {}
+                }
+            },
+            "edges": {},
+            "parameters": {}
+        }
+    ]
+}

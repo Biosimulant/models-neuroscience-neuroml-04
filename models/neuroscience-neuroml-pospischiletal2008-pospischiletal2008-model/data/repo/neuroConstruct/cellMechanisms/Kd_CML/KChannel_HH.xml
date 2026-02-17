@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channelml xmlns="http://morphml.org/channelml/schema" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:meta="http://morphml.org/metadata/schema"
+    xsi:schemaLocation="http://morphml.org/channelml/schema http://www.neuroml.org/NeuroMLValidator/NeuroMLFiles/Schemata/v1.8.0/Level2/ChannelML_v1.8.0.xsd"
+    units="Physiological Units">
+
+    <meta:notes>NeuroML file containing a single Channel description</meta:notes>
+
+    <channel_type name="Kd_CML">
+
+        <status value="stable">
+            <meta:comment>Validated against mod file in https://github.com/OpenSourceBrain/PospischilEtAl2008/blob/master/NEURON_MODIFIED</meta:comment>
+            <meta:contributor>
+                <meta:name>Padraig Gleeson</meta:name>
+            </meta:contributor>
+        </status>
+        
+        <meta:notes>Delayed rectifier K+ current based on Traub and Miles 1991.
+            
+Comment from original mod file: Hippocampal HH channels
+Fast Na+ and K+ currents responsible for action potentials
+Iterative equations
+
+Equations modified by Traub, for Hippocampal Pyramidal cells, in: Traub and Miles, Neuronal Networks of the Hippocampus, Cambridge, 1991
+
+- range variable vtraub adjust threshold
+- Written by Alain Destexhe, Salk Institute, Aug 1992
+- Modified Oct 96 for compatibility with Windows: trap low values of arguments</meta:notes>
+        
+        <meta:authorList>
+            <meta:modelTranslator>
+                <meta:name>Padraig Gleeson</meta:name>
+                <meta:institution>UCL</meta:institution>    
+                <meta:email>p.gleeson - at - ucl.ac.uk</meta:email>
+            </meta:modelTranslator>
+        </meta:authorList>
+        
+        <meta:publication>
+            <meta:fullTitle>Minimal Hodgkin-Huxley type models for different classes of cortical and thalamic neurons</meta:fullTitle>
+            <meta:pubmedRef>19011929</meta:pubmedRef>
+        </meta:publication>
+
+        <meta:neuronDBref>
+            <meta:modelName>K channels</meta:modelName>
+            <meta:uri>http://senselab.med.yale.edu/senselab/NeuronDB/channelGene2.htm#table3</meta:uri>
+        </meta:neuronDBref>
+
+        <parameters>
+            <parameter name="VT" value ="-55"/>
+        </parameters>
+        
+        <current_voltage_relation cond_law="ohmic" ion="k" default_gmax="5" default_erev="-100">
+            
+            <gate name="n" instances="4">
+                <closed_state id="n0"/>
+                <open_state id="n"/>
+
+                <transition name="alpha" from="n0" to="n" expr_form="generic" expr="-0.032 * ( (v - VT) - 15 ) / ( (exp (-1*( (v - VT) - 15 ) / 5)) - 1)"/>
+                <transition name="beta" from="n" to="n0" expr_form="generic" expr="0.5 * (exp (-1*( (v - VT) - 10 ) / 40))"/>
+                    
+            </gate>
+        </current_voltage_relation>
+        
+    </channel_type>
+</channelml>

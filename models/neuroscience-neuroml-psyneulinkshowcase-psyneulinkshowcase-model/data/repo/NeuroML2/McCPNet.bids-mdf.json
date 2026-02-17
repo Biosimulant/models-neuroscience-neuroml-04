@@ -1,0 +1,284 @@
+{
+    "graphs": [
+        {
+            "name": "McCPNet",
+            "notes": "Example of simplified McCulloch-Pitts based Network",
+            "controller": null,
+            "nodes": {
+                "McCPpop0_0": {
+                    "type": {
+                        "PNL": "The type of mccpCell",
+                        "generic": null
+                    },
+                    "name": "McCPpop0_0",
+                    "parameters": {
+                        "PNL": {}
+                    },
+                    "functions": [
+                        {
+                            "type": {
+                                "generic": "The function of mccpCell"
+                            },
+                            "name": "Function_The function of mccpCell",
+                            "args": {
+                                "threshold": {
+                                    "type": "float",
+                                    "source": "McCPpop0_0.input_ports.threshold",
+                                    "value": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                "McCPpop0_1": {
+                    "type": {
+                        "PNL": "The type of mccpCell",
+                        "generic": null
+                    },
+                    "name": "McCPpop0_1",
+                    "parameters": {
+                        "PNL": {}
+                    },
+                    "functions": [
+                        {
+                            "type": {
+                                "generic": "The function of mccpCell"
+                            },
+                            "name": "Function_The function of mccpCell",
+                            "args": {
+                                "threshold": {
+                                    "type": "float",
+                                    "source": "McCPpop0_1.input_ports.threshold",
+                                    "value": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                "McCPpop0_2": {
+                    "type": {
+                        "PNL": "The type of mccpCell",
+                        "generic": null
+                    },
+                    "name": "McCPpop0_2",
+                    "parameters": {
+                        "PNL": {}
+                    },
+                    "functions": [
+                        {
+                            "type": {
+                                "generic": "The function of mccpCell"
+                            },
+                            "name": "Function_The function of mccpCell",
+                            "args": {
+                                "threshold": {
+                                    "type": "float",
+                                    "source": "McCPpop0_2.input_ports.threshold",
+                                    "value": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                "McCPpop1_0": {
+                    "type": {
+                        "PNL": "The type of mccpCell",
+                        "generic": null
+                    },
+                    "name": "McCPpop1_0",
+                    "parameters": {
+                        "PNL": {}
+                    },
+                    "functions": [
+                        {
+                            "type": {
+                                "generic": "The function of mccpCell"
+                            },
+                            "name": "Function_The function of mccpCell",
+                            "args": {
+                                "threshold": {
+                                    "type": "float",
+                                    "source": "McCPpop1_0.input_ports.threshold",
+                                    "value": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                "McCPpop1_1": {
+                    "type": {
+                        "PNL": "The type of mccpCell",
+                        "generic": null
+                    },
+                    "name": "McCPpop1_1",
+                    "parameters": {
+                        "PNL": {}
+                    },
+                    "functions": [
+                        {
+                            "type": {
+                                "generic": "The function of mccpCell"
+                            },
+                            "name": "Function_The function of mccpCell",
+                            "args": {
+                                "threshold": {
+                                    "type": "float",
+                                    "source": "McCPpop1_1.input_ports.threshold",
+                                    "value": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                "McCPpop1_2": {
+                    "type": {
+                        "PNL": "The type of mccpCell",
+                        "generic": null
+                    },
+                    "name": "McCPpop1_2",
+                    "parameters": {
+                        "PNL": {}
+                    },
+                    "functions": [
+                        {
+                            "type": {
+                                "generic": "The function of mccpCell"
+                            },
+                            "name": "Function_The function of mccpCell",
+                            "args": {
+                                "threshold": {
+                                    "type": "float",
+                                    "source": "McCPpop1_2.input_ports.threshold",
+                                    "value": 1
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "edges": {
+                "Edge McCPpop0_0 to McCPpop1_0": {
+                    "name": "Edge McCPpop0_0 to McCPpop1_0",
+                    "type": {
+                        "PNL": "MappingProjection",
+                        "generic": null
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "McCPpop0_0",
+                    "receiver": "McCPpop1_0",
+                    "weight": 0.9649015609162157
+                },
+                "Edge McCPpop0_0 to McCPpop1_1": {
+                    "name": "Edge McCPpop0_0 to McCPpop1_1",
+                    "type": {
+                        "PNL": "MappingProjection",
+                        "generic": null
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "McCPpop0_0",
+                    "receiver": "McCPpop1_1",
+                    "weight": 0.5410881855511303
+                },
+                "Edge McCPpop0_0 to McCPpop1_2": {
+                    "name": "Edge McCPpop0_0 to McCPpop1_2",
+                    "type": {
+                        "PNL": "MappingProjection",
+                        "generic": null
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "McCPpop0_0",
+                    "receiver": "McCPpop1_2",
+                    "weight": 0.6014634495610515
+                },
+                "Edge McCPpop0_1 to McCPpop1_0": {
+                    "name": "Edge McCPpop0_1 to McCPpop1_0",
+                    "type": {
+                        "PNL": "MappingProjection",
+                        "generic": null
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "McCPpop0_1",
+                    "receiver": "McCPpop1_0",
+                    "weight": 0.5790026861873665
+                },
+                "Edge McCPpop0_1 to McCPpop1_1": {
+                    "name": "Edge McCPpop0_1 to McCPpop1_1",
+                    "type": {
+                        "PNL": "MappingProjection",
+                        "generic": null
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "McCPpop0_1",
+                    "receiver": "McCPpop1_1",
+                    "weight": 0.5564325605562156
+                },
+                "Edge McCPpop0_2 to McCPpop1_0": {
+                    "name": "Edge McCPpop0_2 to McCPpop1_0",
+                    "type": {
+                        "PNL": "MappingProjection",
+                        "generic": null
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "McCPpop0_2",
+                    "receiver": "McCPpop1_0",
+                    "weight": 0.35523914744298335
+                },
+                "Edge McCPpop0_2 to McCPpop1_1": {
+                    "name": "Edge McCPpop0_2 to McCPpop1_1",
+                    "type": {
+                        "PNL": "MappingProjection",
+                        "generic": null
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "McCPpop0_2",
+                    "receiver": "McCPpop1_1",
+                    "weight": 0.9335154980423467
+                },
+                "Edge McCPpop0_2 to McCPpop1_2": {
+                    "name": "Edge McCPpop0_2 to McCPpop1_2",
+                    "type": {
+                        "PNL": "MappingProjection",
+                        "generic": null
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "McCPpop0_2",
+                    "receiver": "McCPpop1_2",
+                    "weight": 0.5301612069115903
+                }
+            },
+            "parameters": {
+                "PNL": {
+                    "required_node_roles": []
+                }
+            },
+            "type": {
+                "PNL": "Composition",
+                "generic": "graph"
+            }
+        }
+    ]
+}

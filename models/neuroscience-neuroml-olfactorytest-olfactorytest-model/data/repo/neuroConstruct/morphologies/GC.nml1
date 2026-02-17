@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://morphml.org/neuroml/schema" xmlns:meta="http://morphml.org/metadata/schema" xmlns:mml="http://morphml.org/morphml/schema" xmlns:bio="http://morphml.org/biophysics/schema" xmlns:cml="http://morphml.org/channelml/schema" xmlns:net="http://morphml.org/networkml/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://morphml.org/neuroml/schema  http://www.neuroml.org/NeuroMLValidator/NeuroMLFiles/Schemata/v1.8.1/Level3/NeuroML_Level3_v1.8.1.xsd" lengthUnits="micron">
+
+    <cells>
+        <cell name="GC">
+
+            <meta:notes>Cell: Granule_0 exported from NEURON ModelView</meta:notes>
+
+            <mml:segments>
+
+                <mml:segment id="0" name="Seg0_soma" cable="0">
+                    <mml:proximal x="0.0" y="0.0" z="0.0" diameter="8.0"/>
+                    <mml:distal x="0.0" y="8.0" z="0.0" diameter="8.0"/>
+                </mml:segment>
+
+                <mml:segment id="3" name="Seg0_priden" parent="0" cable="1">
+                    <mml:proximal x="0.0" y="8.0" z="0.0" diameter="0.5"/>
+                    <mml:distal x="0.0" y="158.0" z="0.0" diameter="0.5"/>
+                </mml:segment>
+
+                <mml:segment id="4" name="Seg0_priden2_0" parent="3" cable="2">
+                    <mml:proximal x="0.0" y="128.0" z="0.0" diameter="0.4"/>
+                    <mml:distal x="0.0" y="228.0" z="0.0" diameter="0.4"/>
+                </mml:segment>
+
+                <mml:segment id="2" name="Seg0_dend_1" parent="4" cable="3">
+                    <mml:proximal x="0.0" y="178.0" z="0.0" diameter="0.2"/>
+                    <mml:distal x="1.41421" y="179.414" z="0.0" diameter="0.2"/>
+                </mml:segment>
+
+                <mml:segment id="1" name="Seg0_dend_0" parent="2" cable="4">
+                    <mml:proximal x="1.41421" y="179.414" z="0.0" diameter="1.0"/>
+                    <mml:distal x="2.12132" y="180.121" z="0.0" diameter="1.0"/>
+                </mml:segment>
+
+                
+            </mml:segments>
+
+            <mml:cables>
+
+                <mml:cable id="0" name="soma">
+                    <meta:group>all</meta:group>
+                    <meta:group>soma_group</meta:group>
+                    <meta:group>ModelViewParmSubset_1</meta:group>
+                    <meta:group>ModelViewParmSubset_3</meta:group>
+                    <meta:group>OneSecGrp_SectionRef_1</meta:group>
+                </mml:cable>
+
+                <mml:cable id="1" name="priden">
+                    <meta:properties>
+                        
+                    <meta:property tag="numberInternalDivisions" value="10"/>
+
+                    </meta:properties>
+                
+                    <meta:group>all</meta:group>
+                    <meta:group>dendrite_group</meta:group>
+                    <meta:group>ModelViewParmSubset_3</meta:group>
+                    <meta:group>ModelViewParmSubset_4</meta:group>
+                </mml:cable>
+
+                <mml:cable id="2" name="priden2_0" fract_along_parent="0.8">
+                    <meta:properties>
+                        
+                    <meta:property tag="numberInternalDivisions" value="10"/>
+
+                    </meta:properties>
+                
+                    <meta:group>all</meta:group>
+                    <meta:group>dendrite_group</meta:group>
+                    <meta:group>ModelViewParmSubset_3</meta:group>
+                    <meta:group>ModelViewParmSubset_4</meta:group>
+                </mml:cable>
+
+                <mml:cable id="3" name="dend_1" fract_along_parent="0.5">
+                    <meta:group>all</meta:group>
+                    <meta:group>dendrite_group</meta:group>
+                    <meta:group>ModelViewParmSubset_2</meta:group>
+                    <meta:group>ModelViewParmSubset_4</meta:group>
+                </mml:cable>
+
+                <mml:cable id="4" name="dend_0">
+                    <meta:group>all</meta:group>
+                    <meta:group>dendrite_group</meta:group>
+                    <meta:group>ModelViewParmSubset_2</meta:group>
+                    <meta:group>ModelViewParmSubset_4</meta:group>
+                </mml:cable>
+
+            </mml:cables>
+
+            <!--Adding the biophysical parameters-->
+
+            <biophysics units="Physiological Units">
+
+                <bio:mechanism name="kamt" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="4.0">
+                        <bio:group>OneSecGrp_SectionRef_1</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="kamt" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="8.0">
+                        <bio:group>ModelViewParmSubset_4</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="kdrmt" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="6.0">
+                        <bio:group>OneSecGrp_SectionRef_1</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="nax" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="-1.0E8">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="sh" value="15.0">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="nax" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="20.0">
+                        <bio:group>ModelViewParmSubset_4</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="nax" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="40.0">
+                        <bio:group>OneSecGrp_SectionRef_1</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="pas" type="Channel Mechanism" passive_conductance="true">
+                    <bio:parameter name="e" value="-65.0">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="gmax" value="-1.0E8">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="pas" type="Channel Mechanism" passive_conductance="true">
+                    <bio:parameter name="gmax" value="0.133333">
+                        <bio:group>ModelViewParmSubset_3</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="pas" type="Channel Mechanism" passive_conductance="true">
+                    <bio:parameter name="gmax" value="0.0333333">
+                        <bio:group>ModelViewParmSubset_2</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+                
+
+                <bio:spec_capacitance>
+                    <bio:parameter value="1.0">
+                        <bio:group>ModelViewParmSubset_2</bio:group>
+                    </bio:parameter>
+                
+                    <bio:parameter value="4.0">
+                        <bio:group>ModelViewParmSubset_3</bio:group>
+                    </bio:parameter>
+                </bio:spec_capacitance>
+
+                <bio:spec_axial_resistance>
+                    <bio:parameter value="0.08">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:spec_axial_resistance>
+
+                <bio:init_memb_potential>
+                    <bio:parameter value="-65.0">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:init_memb_potential>
+
+                <bio:ion_props name="k">
+                    <bio:parameter name="e" value="-90.0">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:ion_props>
+            
+
+                <bio:ion_props name="na">
+                    <bio:parameter name="e" value="60.0">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:ion_props>
+            </biophysics>
+
+            <connectivity/>
+
+        </cell>
+    </cells>
+</neuroml>

@@ -1,0 +1,61 @@
+
+
+name: Test with MOOSE --pre
+
+on:
+  push:
+    branches: [ master, dev* , test* ]
+  pull_request:
+    branches: [ master, dev* , test* ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ 3.9 ]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python  ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version:  ${{ matrix.python-version }}
+      
+
+    - name: Install Moose
+      run: |
+
+        pip install pyneuroml scipy # missing(?) dependencies
+
+        pip install pymoose --pre
+        pip list
+
+    - name: Test Moose files
+      run: |
+        python tests/python/test_function.py
+        #./test.sh
+        
+    - name: Test simple Moose file
+      run: |
+        cd NeuroML2
+        python -c "import moose; print(moose.__version__)"
+        echo "Running simple file"
+        python simple.py
+
+    - name: Test Moose files with NeuroML version 2
+      run: |
+        cd NeuroML2
+        python run_hhcell.py -nogui
+
+    - name: Install OMV
+      run: |
+        pip install git+https://github.com/OpenSourceBrain/osb-model-validation
+        pip install scipy sympy matplotlib cython pandas tables
+
+    - name: Final version info
+      run: |
+
+        omv list -V # list installed engines
+        pip list

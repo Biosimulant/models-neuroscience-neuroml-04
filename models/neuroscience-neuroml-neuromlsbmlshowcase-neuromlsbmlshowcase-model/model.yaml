@@ -1,0 +1,34 @@
+schema_version: '2.0'
+title: 'Neuroscience: NeuromlsbmlshowcaseNeuromlsbmlshowcaseModel'
+description: Models combining elements specified in NeuroML and SBML
+standard: other
+tags:
+- neuroscience
+- neuroml
+- opensourcebrain
+- faithful
+authors:
+- Biosimulant Team
+- Open Source Brain
+upstream:
+  id: opensourcebrain:NeuroMLSBMLShowcase
+  source_db: opensourcebrain
+  source_id: NeuroMLSBMLShowcase
+  standard: neuroml
+  original_url: https://github.com/OpenSourceBrain/NeuroMLSBMLShowcase
+  download_url: https://github.com/OpenSourceBrain/NeuroMLSBMLShowcase.git
+  license: MIT
+bsim:
+  entrypoint: src.neuromlsbmlshowcase_neuromlsbmlshowcase_model:NeuromlsbmlshowcaseNeuromlsbmlshowcaseModel
+  init_kwargs:
+    model_path: data/repo
+  min_dt: 0.001
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - pyneuroml==0.9.17
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

@@ -1,0 +1,77 @@
+harness:
+  name: workspaces
+  subdomain: workspaces
+  service:
+     port: 8080
+     auto: true
+     name: workspaces
+  secured: false
+  sentry: true
+  livenessProbe:
+    path: /api/live
+    initialDelaySeconds: 5
+    periodSeconds: 15
+  readinessProbe:
+    path: /api/ready
+    initialDelaySeconds: 10
+    periodSeconds: 15
+  deployment:
+    auto: true
+    port: 8080
+    volume:
+      name: workspaces-images
+      size: 4G
+      mountpath: /usr/src/app/workspaces/static/workspaces
+    resources:
+      requests:
+        memory: 128Mi
+        cpu: 20m
+      limits:
+        memory: 512Mi
+        cpu: 1500m
+  quotas:
+    # sets the max number of workspaces per user
+    quota-ws-max: 5
+    # sets the storage dedicated to a single workspace in Gb units (float)
+    quota-ws-storage-max: 1
+  secrets:
+    github-user:
+    github-token:
+  dependencies:
+    build:
+      - cloudharness-base
+      - cloudharness-flask
+    soft:
+      - events
+      - common
+      - workflows
+      - notifications
+      - nfsserver
+    hard:
+      - argo
+      - accounts
+  database:
+    auto: false
+    name: workspaces-postgres-host
+    type: postgres
+    port: 5432
+    image: postgres:13
+    initialdb: workspaces
+    user: workspace
+    password: secret
+    datavolume: /opt/data/
+    pgdata: /opt/data/pgdata
+    resources:
+      requests:
+        memory: 128Mi
+        cpu: 20m
+      limits:          
+        memory: "256Mi"
+        cpu: "2000m"
+  test:
+    unit:
+      enabled: true
+      commands:
+      
+      - pytest /usr/src/app/
+workspace_size: 2Gi

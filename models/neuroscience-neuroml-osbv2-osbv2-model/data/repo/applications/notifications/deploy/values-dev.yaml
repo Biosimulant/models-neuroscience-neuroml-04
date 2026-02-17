@@ -1,0 +1,11 @@
+notification:
+  channels:
+    log:
+      adapter: email
+      backends: 
+        - console
+      templateFolder: text
+      from: info@example.com
+      to:
+        - info@example.com
+    admins:

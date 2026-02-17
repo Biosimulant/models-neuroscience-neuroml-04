@@ -1,0 +1,81 @@
+version: '1.0'
+stages:
+- prepare
+- deploy
+steps:
+  main_clone:
+    title: Clone main repository
+    type: git-clone
+    stage: prepare
+    repo: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
+    revision: '${{CF_BRANCH}}'
+    git: github
+  post_main_clone:
+    title: Post main clone
+    type: parallel
+    stage: prepare
+    steps:
+      clone_cloud_harness:
+        title: Cloning cloud-harness repository...
+        type: git-clone
+        stage: prepare
+        repo: https://github.com/MetaCell/cloud-harness.git
+        revision: '${{CLOUDHARNESS_BRANCH}}'
+        working_directory: .
+        git: github
+      clone_nwb-explorer_git_nwb-explorer:
+        title: Cloning nwb-explorer.git repository...
+        type: git-clone
+        repo: https://github.com/MetaCell/nwb-explorer.git
+        revision: master
+        working_directory: applications/nwb-explorer/dependencies/
+        git: github
+  prepare_deployment:
+    title: Prepare helm chart
+    image: python:3.12
+    stage: prepare
+    working_directory: .
+    commands:
+    - bash cloud-harness/install.sh
+    - harness-deployment cloud-harness . -t ${{DEPLOYMENT_TAG}} -d ${{DOMAIN}} -r
+      ${{REGISTRY}} -rs ${{REGISTRY_SECRET}} -n ${{NAMESPACE}} -e prod -i osb-portal
+  prepare_deployment_view:
+    commands:
+    - helm template ./deployment/helm --debug -n ${{NAMESPACE}}
+    environment:
+    - ACTION=auth
+    - KUBE_CONTEXT=${{NAMESPACE}}
+    image: codefresh/cfstep-helm:3.6.2
+    stage: prepare
+    title: View helm chart
+  deployment:
+    stage: deploy
+    type: helm
+    working_directory: ./${{CF_REPO_NAME}}
+    title: Installing chart
+    arguments:
+      helm_version: 3.6.2
+      chart_name: deployment/helm
+      release_name: '${{NAMESPACE}}'
+      kube_context: '${{CLUSTER_NAME}}'
+      namespace: '${{NAMESPACE}}'
+      chart_version: '${{DEPLOYMENT_TAG}}'
+      cmd_ps: --wait --timeout 600s --create-namespace
+      custom_value_files:
+      - ./deployment/helm/values.yaml
+      custom_values:
+      - apps_notifications_harness_secrets_email-user=${{EMAIL-USER}}
+      - apps_notifications_harness_secrets_email-password=${{EMAIL-PASSWORD}}
+      - apps_workspaces_harness_secrets_github-user=${{GITHUB-USER}}
+      - apps_workspaces_harness_secrets_github-token=${{GITHUB-TOKEN}}
+    image: codefresh/cfstep-helm:3.6.2
+    environment:
+    - CHART_REF=./deployment/helm
+    - RELEASE_NAME=${{NAMESPACE}}
+    - KUBE_CONTEXT=${{CLUSTER_NAME}}
+    - NAMESPACE=${{NAMESPACE}}
+    - CHART_VERSION=${{DEPLOYMENT_PUBLISH_TAG}}
+    - HELM_REPO_USE_HTTP=false
+    - HELM_REPO_CONTEXT_PATH=
+    - TIMEOUT=600s
+    - VALUESFILE_values=./deployment/helm/values.yaml

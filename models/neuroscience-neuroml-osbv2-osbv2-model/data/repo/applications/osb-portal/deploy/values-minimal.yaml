@@ -1,0 +1,10 @@
+harness:
+  sentry: false
+  dependencies:
+    soft:
+      - accounts-api
+      - workspaces
+      - jupyterhub
+      - notifications
+      - nwb-explorer
+

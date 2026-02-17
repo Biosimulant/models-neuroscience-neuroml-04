@@ -1,0 +1,3 @@
+harness:
+  sentry: false
+workspace_size: 10Mi

@@ -1,0 +1,83 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2.3.1.xsd" id="HHSmall">
+    <notes>NeuroML 2 file exported from NetPyNE v1.0.7</notes>
+    <ionChannelHH id="leak_hh" type="ionChannelPassive" conductance="10pS">
+        <notes>Single ion channel in NeuroML2 format: passive channel providing a leak conductance </notes>
+    </ionChannelHH>
+    <ionChannelHH id="na_hh" species="na" conductance="10pS">
+        <notes>Single ion channel in NeuroML2 format: standard Sodium channel from the Hodgkin Huxley model</notes>
+        <gateHHrates id="m" instances="3">
+            <forwardRate type="HHExpLinearRate" rate="1per_ms" midpoint="-40mV" scale="10mV"/>
+            <reverseRate type="HHExpRate" rate="4per_ms" midpoint="-65mV" scale="-18mV"/>
+        </gateHHrates>
+        <gateHHrates id="h" instances="1">
+            <forwardRate type="HHExpRate" rate="0.07per_ms" midpoint="-65mV" scale="-20mV"/>
+            <reverseRate type="HHSigmoidRate" rate="1per_ms" midpoint="-35mV" scale="10mV"/>
+        </gateHHrates>
+    </ionChannelHH>
+    <ionChannelHH id="k_hh" species="k" conductance="10pS">
+        <notes>Single ion channel in NeuroML2 format: standard Potassium channel from the Hodgkin Huxley model</notes>
+        <gateHHrates id="n" instances="4">
+            <forwardRate type="HHExpLinearRate" rate="0.1per_ms" midpoint="-55mV" scale="10mV"/>
+            <reverseRate type="HHExpRate" rate="0.125per_ms" midpoint="-65mV" scale="-80mV"/>
+        </gateHHrates>
+    </ionChannelHH>
+    <expTwoSynapse id="AMPA" gbase="1uS" erev="0mV" tauDecay="1.0ms" tauRise="0.1ms"/>
+    <cell id="CELL_HH_PYR">
+        <notes>Cell exported from NetPyNE:
+{'conds': {'cellModel': 'HH', 'cellType': 'PYR'}, 'secs': {'soma': {'geom': {'diam': 18.8, 'L': 18.8, 'Ra': 123.0, 'cm': 1}, 'mechs': {'hh': {'gnabar': 0.12, 'gkbar': 0.036, 'gl': 0.003, 'el': -70}}, 'vinit': -71}}}</notes>
+        <morphology id="morph_CELL_HH_PYR">
+            <segment id="0" name="soma">
+                <proximal x="0.0" y="0.0" z="0.0" diameter="18.8"/>
+                <distal x="0.0" y="18.8" z="0.0" diameter="18.8"/>
+            </segment>
+            <segmentGroup id="soma_SECTION" neuroLexId="sao864921383">
+                <member segment="0"/>
+            </segmentGroup>
+            <segmentGroup id="soma_group">
+                <include segmentGroup="soma_SECTION"/>
+            </segmentGroup>
+        </morphology>
+        <biophysicalProperties id="biophys_CELL_HH_PYR">
+            <membraneProperties>
+                <channelDensity id="leak_soma_group" ionChannel="leak_hh" condDensity="0.003 S_per_cm2" erev="-70 mV" ion="non_specific"/>
+                <channelDensity id="k_soma_group" ionChannel="k_hh" condDensity="0.036 S_per_cm2" erev="-77 mV" ion="k"/>
+                <channelDensity id="na_soma_group" ionChannel="na_hh" condDensity="0.12 S_per_cm2" erev="50 mV" ion="na"/>
+                <spikeThresh value="10 mV"/>
+                <specificCapacitance value="1 uF_per_cm2" segmentGroup="soma_group"/>
+                <initMembPotential value="-71 mV"/>
+            </membraneProperties>
+            <intracellularProperties>
+                <resistivity value="123.0 ohm_cm" segmentGroup="soma_group"/>
+            </intracellularProperties>
+        </biophysicalProperties>
+    </cell>
+    <spikeGenerator id="NetStim_bkg_PYR_20_0_AMPA" period="0.05s"/>
+    <network id="HHSmall">
+        <population id="PYR" component="CELL_HH_PYR" size="3" type="populationList">
+            <property tag="color" value="0.41661987254534116 0.010169169457068361 0.8252065092537432"/>
+            <instance id="0">
+                <location x="29.565889544420436" y="18.528336282230836" z="13.667258291117088"/>
+            </instance>
+            <instance id="1">
+                <location x="65.810369382190899" y="48.930452869057085" z="14.911683435805214"/>
+            </instance>
+            <instance id="2">
+                <location x="28.392855676730893" y="55.244638897654454" z="91.525576195790066"/>
+            </instance>
+        </population>
+        <population id="Pop_NetStim_bkg_PYR_20_0_AMPA" component="NetStim_bkg_PYR_20_0_AMPA" size="3"/>
+        <projection id="NetConn_PYR_PYR_AMPA" presynapticPopulation="PYR" postsynapticPopulation="PYR" synapse="AMPA">
+            <connectionWD id="0" preCellId="../PYR/1/CELL_HH_PYR" postCellId="../PYR/0/CELL_HH_PYR" weight="0.002" delay="12.75675057908854 ms"/>
+            <connectionWD id="1" preCellId="../PYR/2/CELL_HH_PYR" postCellId="../PYR/0/CELL_HH_PYR" weight="0.002" delay="12.516664339611445 ms"/>
+            <connectionWD id="2" preCellId="../PYR/0/CELL_HH_PYR" postCellId="../PYR/1/CELL_HH_PYR" weight="0.002" delay="12.882266700443374 ms"/>
+            <connectionWD id="3" preCellId="../PYR/2/CELL_HH_PYR" postCellId="../PYR/1/CELL_HH_PYR" weight="0.002" delay="14.214732391680146 ms"/>
+            <connectionWD id="4" preCellId="../PYR/0/CELL_HH_PYR" postCellId="../PYR/2/CELL_HH_PYR" weight="0.002" delay="14.602870231822557 ms"/>
+            <connectionWD id="5" preCellId="../PYR/1/CELL_HH_PYR" postCellId="../PYR/2/CELL_HH_PYR" weight="0.002" delay="11.514025612022943 ms"/>
+        </projection>
+        <projection id="NetConn_NetStim_bkg_PYR_20_0_AMPA__PYR" presynapticPopulation="Pop_NetStim_bkg_PYR_20_0_AMPA" postsynapticPopulation="PYR" synapse="AMPA">
+            <connectionWD id="0" preCellId="../Pop_NetStim_bkg_PYR_20_0_AMPA[0]" postCellId="../PYR/0/CELL_HH_PYR" weight="0.1" delay="13.41088594672948 ms"/>
+            <connectionWD id="1" preCellId="../Pop_NetStim_bkg_PYR_20_0_AMPA[1]" postCellId="../PYR/1/CELL_HH_PYR" weight="0.1" delay="9.837649130533066 ms"/>
+            <connectionWD id="2" preCellId="../Pop_NetStim_bkg_PYR_20_0_AMPA[2]" postCellId="../PYR/2/CELL_HH_PYR" weight="0.1" delay="10.651358881580792 ms"/>
+        </projection>
+    </network>
+</neuroml>

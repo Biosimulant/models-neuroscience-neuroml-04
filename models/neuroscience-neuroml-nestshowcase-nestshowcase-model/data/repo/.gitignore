@@ -1,0 +1,10 @@
+/NeuroML2/Sim_SimpleNet.iaf_pop.v.dat
+/NeuroML2/RS_One.dat
+/NeuroML2/hr.dat
+/NeuroML2/*.dat
+/NESTML2LEMS/tests.log
+/NESTML/izh2/target
+/NESTML/izh2/*.dat
+/NESTML/testnml/*.dat
+/NESTML/testnml/target
+/PyNEST/*.dat

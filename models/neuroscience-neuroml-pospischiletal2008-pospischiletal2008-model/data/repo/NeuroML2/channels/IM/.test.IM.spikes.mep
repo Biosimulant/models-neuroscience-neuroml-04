@@ -1,0 +1,12 @@
+system: Expected voltage times for IM channel
+
+experiments:
+  one:
+    expected:
+      spike times: [300.44]
+  two:
+    expected:
+      spike times: [318.15, 512.25]
+  three:
+    expected:
+      spike times: [334.32]

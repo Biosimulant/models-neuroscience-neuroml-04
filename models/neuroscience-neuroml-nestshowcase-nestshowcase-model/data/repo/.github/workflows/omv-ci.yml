@@ -1,0 +1,71 @@
+
+name: Continuous build using OMV
+
+on:
+  push:
+    branches: [ master, development, experimental ]
+  pull_request:
+    branches: [ master, development, experimental ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.11", "3.13"]
+        engine: 
+           - jLEMS
+           - jNeuroML
+           - jNeuroML_validate
+           - PyNEST
+           - "PyNEST:2.20.0"  
+           - "PyNEST:3.4"    
+           - "PyNEST:3.6"    
+           - "PyNEST:3.8"    
+           - NEST
+           - "NEST:2.16.0"
+           - "NEST:2.18.0"
+           - "NEST:3.0"
+           - "NEST:3.1"
+           - "NEST:3.4"
+           - "NEST:3.5"
+           - "NEST:3.6"
+           - "NEST:3.7"
+           - "NEST:3.8"
+        exclude:
+           - python-version: "3.10"
+           - engine: "PyNEST:2.20.0"
+
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python  ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version:  ${{ matrix.python-version }}
+
+    - name: Install OMV
+      run: |
+        pip install git+https://github.com/OpenSourceBrain/osb-model-validation # @test_nest
+        
+        pip install matplotlib "cython<3.1.0"  # let omv handle other deps...
+        
+        sudo apt-get install libgsl27 libgslcblas0 # install GSL for ubuntu 24.04
+
+    - name: Run OMV tests on engine ${{ matrix.engine }}
+      run: |
+        omv all -V --engine=${{ matrix.engine }}
+
+    - name: Directly run NEST if any NEST-like engine
+      run: |
+        if [[  ${{ matrix.engine }} == *"NEST"* ]]; then cd NEST/test/; /home/runner/nest/nest/bin/nest test_nest.sli ; fi
+
+    - name: OMV final version info
+      run: |
+        omv list -V # list installed engines
+        pip list
+        
+        env

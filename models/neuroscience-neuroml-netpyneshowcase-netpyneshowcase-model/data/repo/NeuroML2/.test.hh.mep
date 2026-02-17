@@ -1,0 +1,16 @@
+system: Test 
+
+experiments:
+    v0:
+        expected:
+            spike times:   [63.8175, 113.8175, 163.8175, 213.8175, 263.8175]
+    v1:
+        expected:
+            spike times:  [60.245000000000005, 110.245, 160.245, 210.245, 260.245]
+    v2:
+        expected:
+            spike times:  [61.06, 111.06, 161.06, 211.06, 261.06]
+
+
+
+
