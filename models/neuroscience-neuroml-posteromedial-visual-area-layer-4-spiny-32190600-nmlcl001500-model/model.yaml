@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL001500
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL001500
   license: ''
-bsim:
+biosim:
   entrypoint: src.posteromedial_visual_area_layer_4_spiny_32190600_nmlcl001500_model:PosteromedialVisualAreaLayer4Spiny32190600Nmlcl001500Model
   init_kwargs:
     model_path: data/render_xml_file.nml

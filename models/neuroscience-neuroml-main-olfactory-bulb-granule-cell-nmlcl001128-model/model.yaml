@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL001128
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL001128
   license: ''
-bsim:
+biosim:
   entrypoint: src.main_olfactory_bulb_granule_cell_nmlcl001128_model:MainOlfactoryBulbGranuleCellNmlcl001128Model
   init_kwargs:
     model_path: data/render_xml_file.nml

@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/NeuroMorpho
   download_url: https://github.com/OpenSourceBrain/NeuroMorpho.git
   license: NOASSERTION
-bsim:
+biosim:
   entrypoint: src.neuromorpho_neuromorpho_model:NeuromorphoNeuromorphoModel
   init_kwargs:
     model_path: data/repo

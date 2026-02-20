@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/OSB_Documentation
   download_url: https://github.com/OpenSourceBrain/OSB_Documentation.git
   license: ''
-bsim:
+biosim:
   entrypoint: src.osb_documentation_osbdocumentation_model:OsbDocumentationOsbdocumentationModel
   init_kwargs:
     model_path: data/model.xml

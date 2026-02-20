@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/SpineShowcase
   download_url: https://github.com/OpenSourceBrain/SpineShowcase.git
   license: ''
-bsim:
+biosim:
   entrypoint: src.spineshowcase_spineshowcase_model:SpineshowcaseSpineshowcaseModel
   init_kwargs:
     model_path: data/repo

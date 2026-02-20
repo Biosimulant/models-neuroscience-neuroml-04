@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/PsyNeuLinkShowcase
   download_url: https://github.com/OpenSourceBrain/PsyNeuLinkShowcase.git
   license: ''
-bsim:
+biosim:
   entrypoint: src.psyneulinkshowcase_psyneulinkshowcase_model:PsyneulinkshowcasePsyneulinkshowcaseModel
   init_kwargs:
     model_path: data/repo

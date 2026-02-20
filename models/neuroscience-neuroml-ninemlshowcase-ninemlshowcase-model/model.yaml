@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/NineMLShowcase
   download_url: https://github.com/OpenSourceBrain/NineMLShowcase.git
   license: ''
-bsim:
+biosim:
   entrypoint: src.ninemlshowcase_ninemlshowcase_model:NinemlshowcaseNinemlshowcaseModel
   init_kwargs:
     model_path: data/repo

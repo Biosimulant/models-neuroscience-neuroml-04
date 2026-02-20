@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCH000110
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCH000110
   license: ''
-bsim:
+biosim:
   entrypoint: src.nata_fast_inactivating_sodium_nmlch000110_model:NataFastInactivatingSodiumNmlch000110Model
   init_kwargs:
     model_path: data/render_xml_file.nml

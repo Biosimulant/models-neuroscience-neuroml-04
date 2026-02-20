@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL001527
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL001527
   license: ''
-bsim:
+biosim:
   entrypoint: src.primary_visual_area_layer_4_spiny_476616076_nmlcl001527_model:PrimaryVisualAreaLayer4Spiny476616076Nmlcl001527Model
   init_kwargs:
     model_path: data/render_xml_file.nml

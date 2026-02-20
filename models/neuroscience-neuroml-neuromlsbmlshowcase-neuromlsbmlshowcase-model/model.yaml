@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/NeuroMLSBMLShowcase
   download_url: https://github.com/OpenSourceBrain/NeuroMLSBMLShowcase.git
   license: MIT
-bsim:
+biosim:
   entrypoint: src.neuromlsbmlshowcase_neuromlsbmlshowcase_model:NeuromlsbmlshowcaseNeuromlsbmlshowcaseModel
   init_kwargs:
     model_path: data/repo

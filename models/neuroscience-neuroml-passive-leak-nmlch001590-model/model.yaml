@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCH001590
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCH001590
   license: ''
-bsim:
+biosim:
   entrypoint: src.passive_leak_nmlch001590_model:PassiveLeakNmlch001590Model
   init_kwargs:
     model_path: data/render_xml_file.nml

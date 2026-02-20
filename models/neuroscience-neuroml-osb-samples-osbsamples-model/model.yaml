@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/OSB_Samples
   download_url: https://github.com/OpenSourceBrain/OSB_Samples.git
   license: ''
-bsim:
+biosim:
   entrypoint: src.osb_samples_osbsamples_model:OsbSamplesOsbsamplesModel
   init_kwargs:
     model_path: data/repo

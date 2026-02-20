@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCH001551
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCH001551
   license: ''
-bsim:
+biosim:
   entrypoint: src.na_sodium_nmlch001551_model:NaSodiumNmlch001551Model
   init_kwargs:
     model_path: data/render_xml_file.nml

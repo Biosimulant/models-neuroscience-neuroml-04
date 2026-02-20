@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/PyNNShowcase
   download_url: https://github.com/OpenSourceBrain/PyNNShowcase.git
   license: ''
-bsim:
+biosim:
   entrypoint: src.pynnshowcase_pynnshowcase_model:PynnshowcasePynnshowcaseModel
   init_kwargs:
     model_path: data/repo

@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/SBMLShowcase
   download_url: https://github.com/OpenSourceBrain/SBMLShowcase.git
   license: ''
-bsim:
+biosim:
   entrypoint: src.sbmlshowcase_sbmlshowcase_model:SbmlshowcaseSbmlshowcaseModel
   init_kwargs:
     model_path: data/repo

@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL000914
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL000914
   license: ''
-bsim:
+biosim:
   entrypoint: src.layer_6_continuous_non_accommodating_double_bouq_nmlcl000914_model:Layer6ContinuousNonAccommodatingDoubleBouqNmlcl000914Model
   init_kwargs:
     model_path: data/render_xml_file.nml

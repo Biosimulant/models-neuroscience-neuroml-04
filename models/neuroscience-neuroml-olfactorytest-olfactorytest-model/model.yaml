@@ -19,7 +19,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/OlfactoryTest
   download_url: https://github.com/OpenSourceBrain/OlfactoryTest.git
   license: ''
-bsim:
+biosim:
   entrypoint: src.olfactorytest_olfactorytest_model:OlfactorytestOlfactorytestModel
   init_kwargs:
     model_path: data/repo

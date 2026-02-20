@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL000675
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL000675
   license: ''
-bsim:
+biosim:
   entrypoint: src.layer_6_continuous_accommodating_tufted_pyramida_nmlcl000675_model:Layer6ContinuousAccommodatingTuftedPyramidaNmlcl000675Model
   init_kwargs:
     model_path: data/render_xml_file.nml

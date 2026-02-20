@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL001142
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL001142
   license: ''
-bsim:
+biosim:
   entrypoint: src.layer_6_nontufted_regular_spiking_rs_pyramidal_nmlcl001142_model:Layer6NontuftedRegularSpikingRsPyramidalNmlcl001142Model
   init_kwargs:
     model_path: data/render_xml_file.nml

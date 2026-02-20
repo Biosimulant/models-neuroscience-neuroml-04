@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLNT001576
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLNT001576
   license: ''
-bsim:
+biosim:
   entrypoint: src.pyloric_network_figs_2a_b_nmlnt001576_model:PyloricNetworkFigs2aBNmlnt001576Model
   init_kwargs:
     model_path: data/render_xml_file.nml

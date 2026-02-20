@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL001491
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL001491
   license: ''
-bsim:
+biosim:
   entrypoint: src.postrhinal_area_layer_5_aspiny_323834998_nmlcl001491_model:PostrhinalAreaLayer5Aspiny323834998Nmlcl001491Model
   init_kwargs:
     model_path: data/render_xml_file.nml

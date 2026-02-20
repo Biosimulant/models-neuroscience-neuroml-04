@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL001145
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL001145
   license: ''
-bsim:
+biosim:
   entrypoint: src.superficial_low_threshold_spiking_lts_interneuro_nmlcl001145_model:SuperficialLowThresholdSpikingLtsInterneuroNmlcl001145Model
   init_kwargs:
     model_path: data/render_xml_file.nml

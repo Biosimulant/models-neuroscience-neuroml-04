@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLSY000221
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLSY000221
   license: ''
-bsim:
+biosim:
   entrypoint: src.nmda_tcr_nrt_nmlsy000221_model:NmdaTcrNrtNmlsy000221Model
   init_kwargs:
     model_path: data/render_xml_file.nml

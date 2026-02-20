@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCH000137
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCH000137
   license: ''
-bsim:
+biosim:
   entrypoint: src.nax_sodium_channel_for_axon_nmlch000137_model:NaxSodiumChannelForAxonNmlch000137Model
   init_kwargs:
     model_path: data/render_xml_file.nml

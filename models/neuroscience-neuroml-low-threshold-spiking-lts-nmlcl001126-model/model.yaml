@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL001126
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL001126
   license: ''
-bsim:
+biosim:
   entrypoint: src.low_threshold_spiking_lts_nmlcl001126_model:LowThresholdSpikingLtsNmlcl001126Model
   init_kwargs:
     model_path: data/render_xml_file.nml

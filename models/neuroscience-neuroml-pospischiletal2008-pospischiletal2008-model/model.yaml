@@ -20,7 +20,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/PospischilEtAl2008
   download_url: https://github.com/OpenSourceBrain/PospischilEtAl2008.git
   license: NOASSERTION
-bsim:
+biosim:
   entrypoint: src.pospischiletal2008_pospischiletal2008_model:Pospischiletal2008Pospischiletal2008Model
   init_kwargs:
     model_path: data/repo

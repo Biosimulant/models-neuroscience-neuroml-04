@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/OSBv2
   download_url: https://github.com/OpenSourceBrain/OSBv2.git
   license: NOASSERTION
-bsim:
+biosim:
   entrypoint: src.osbv2_osbv2_model:Osbv2Osbv2Model
   init_kwargs:
     model_path: data/repo

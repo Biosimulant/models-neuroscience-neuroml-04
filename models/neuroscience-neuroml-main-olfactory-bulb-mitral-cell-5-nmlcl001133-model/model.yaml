@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL001133
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL001133
   license: ''
-bsim:
+biosim:
   entrypoint: src.main_olfactory_bulb_mitral_cell_5_nmlcl001133_model:MainOlfactoryBulbMitralCell5Nmlcl001133Model
   init_kwargs:
     model_path: data/render_xml_file.nml

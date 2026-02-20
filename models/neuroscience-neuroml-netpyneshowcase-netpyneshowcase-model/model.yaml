@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/NetPyNEShowcase
   download_url: https://github.com/OpenSourceBrain/NetPyNEShowcase.git
   license: ''
-bsim:
+biosim:
   entrypoint: src.netpyneshowcase_netpyneshowcase_model:NetpyneshowcaseNetpyneshowcaseModel
   init_kwargs:
     model_path: data/repo

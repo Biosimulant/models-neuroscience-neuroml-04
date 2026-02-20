@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL000632
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL000632
   license: ''
-bsim:
+biosim:
   entrypoint: src.layer_6_continuous_accommodating_small_basket_ce_nmlcl000632_model:Layer6ContinuousAccommodatingSmallBasketCeNmlcl000632Model
   init_kwargs:
     model_path: data/render_xml_file.nml

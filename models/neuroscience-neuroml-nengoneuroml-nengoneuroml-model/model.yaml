@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/NengoNeuroML
   download_url: https://github.com/OpenSourceBrain/NengoNeuroML.git
   license: ''
-bsim:
+biosim:
   entrypoint: src.nengoneuroml_nengoneuroml_model:NengoneuromlNengoneuromlModel
   init_kwargs:
     model_path: data/repo

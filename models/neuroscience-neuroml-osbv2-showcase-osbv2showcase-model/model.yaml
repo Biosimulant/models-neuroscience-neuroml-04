@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/OSBv2_Showcase
   download_url: https://github.com/OpenSourceBrain/OSBv2_Showcase.git
   license: ''
-bsim:
+biosim:
   entrypoint: src.osbv2_showcase_osbv2showcase_model:Osbv2ShowcaseOsbv2showcaseModel
   init_kwargs:
     model_path: data/repo

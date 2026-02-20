@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL000918
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL000918
   license: ''
-bsim:
+biosim:
   entrypoint: src.layer_6_continuous_non_accommodating_large_baske_nmlcl000918_model:Layer6ContinuousNonAccommodatingLargeBaskeNmlcl000918Model
   init_kwargs:
     model_path: data/render_xml_file.nml

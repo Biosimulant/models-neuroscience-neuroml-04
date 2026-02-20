@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/ONNXShowcase
   download_url: https://github.com/OpenSourceBrain/ONNXShowcase.git
   license: ''
-bsim:
+biosim:
   entrypoint: src.onnxshowcase_onnxshowcase_model:OnnxshowcaseOnnxshowcaseModel
   init_kwargs:
     model_path: data/repo

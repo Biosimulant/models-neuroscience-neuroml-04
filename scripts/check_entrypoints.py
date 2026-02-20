@@ -14,12 +14,16 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.dont_write_bytecode = True
 
-# When running from the Biosimulant monorepo checkout (without installing bsim),
-# ensure `import bsim` resolves to the installable package at `bsim/src/bsim/`.
-REPO_ROOT = ROOT.parent
-BSIM_SRC = REPO_ROOT / "bsim" / "src"
-if BSIM_SRC.exists():
-    sys.path.insert(0, str(BSIM_SRC))
+# Resolve local biosim source when running in the Biosimulant monorepo.
+for p in [ROOT, *ROOT.parents]:
+    bsim_src = p / "bsim" / "src"
+    if bsim_src.exists():
+        sys.path.insert(0, str(bsim_src))
+        break
+    biosim_src = p / "biosim" / "src"
+    if biosim_src.exists():
+        sys.path.insert(0, str(biosim_src))
+        break
 
 
 def _load_yaml(path: Path) -> dict[str, Any]:
@@ -46,10 +50,10 @@ def main() -> int:
 
         try:
             manifest = _load_yaml(manifest_path)
-            bsim = manifest.get("bsim") if isinstance(manifest.get("bsim"), dict) else {}
-            entrypoint = bsim.get("entrypoint") or manifest.get("entrypoint")
+            biosim = manifest.get("biosim") if isinstance(manifest.get("biosim"), dict) else {}
+            entrypoint = biosim.get("entrypoint") or manifest.get("entrypoint")
             if not isinstance(entrypoint, str) or not entrypoint.strip():
-                errors.append(f"{manifest_path}: missing bsim.entrypoint")
+                errors.append(f"{manifest_path}: missing biosim.entrypoint")
                 continue
 
             module_name, attr = _split_entrypoint(entrypoint)

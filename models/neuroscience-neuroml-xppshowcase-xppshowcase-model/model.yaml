@@ -18,7 +18,7 @@ upstream:
   original_url: https://github.com/OpenSourceBrain/XPPShowcase
   download_url: https://github.com/OpenSourceBrain/XPPShowcase.git
   license: ''
-bsim:
+biosim:
   entrypoint: src.xppshowcase_xppshowcase_model:XppshowcaseXppshowcaseModel
   init_kwargs:
     model_path: data/repo

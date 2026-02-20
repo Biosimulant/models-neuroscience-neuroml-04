@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL000993
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL000993
   license: ''
-bsim:
+biosim:
   entrypoint: src.layer_6_continuous_stuttering_neurogliaform_cell_nmlcl000993_model:Layer6ContinuousStutteringNeurogliaformCellNmlcl000993Model
   init_kwargs:
     model_path: data/render_xml_file.nml

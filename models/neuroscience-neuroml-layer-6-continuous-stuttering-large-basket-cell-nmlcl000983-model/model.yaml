@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL000983
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL000983
   license: ''
-bsim:
+biosim:
   entrypoint: src.layer_6_continuous_stuttering_large_basket_cell_nmlcl000983_model:Layer6ContinuousStutteringLargeBasketCellNmlcl000983Model
   init_kwargs:
     model_path: data/render_xml_file.nml

@@ -18,7 +18,7 @@ upstream:
   original_url: https://neuroml-db.org/model_info?model_id=NMLCL001565
   download_url: https://neuroml-db.org/render_xml_file?modelID=NMLCL001565
   license: ''
-bsim:
+biosim:
   entrypoint: src.stomatogastric_ganglion_stg_ab_pd_cell_1_nmlcl001565_model:StomatogastricGanglionStgAbPdCell1Nmlcl001565Model
   init_kwargs:
     model_path: data/render_xml_file.nml
