@@ -1,0 +1,75 @@
+schema_version: '2.0'
+title: 'Neuroscience: Cortical Circuits (COMBO_0043)'
+description: Neuroscience cortical circuits comparative space with 3 models, configured
+  as non-causal co-simulation.
+models:
+- repo: Biosimulant/models-neuroscience-neuroml-04
+  alias: layer_continuous_1
+  manifest_path: models/neuroscience-neuroml-layer-6-continuous-non-accommodating-neurogliafo-nmlcl000932-model/model.yaml
+  parameters:
+    model_path: data/render_xml_file.nml
+- repo: Biosimulant/models-neuroscience-neuroml-04
+  alias: layer_continuous_2
+  manifest_path: models/neuroscience-neuroml-layer-6-continuous-non-accommodating-neurogliafo-nmlcl000933-model/model.yaml
+  parameters:
+    model_path: data/render_xml_file.nml
+- repo: Biosimulant/models-neuroscience-neuroml-04
+  alias: layer_continuous_3
+  manifest_path: models/neuroscience-neuroml-layer-6-continuous-non-accommodating-neurogliafo-nmlcl000934-model/model.yaml
+  parameters:
+    model_path: data/render_xml_file.nml
+- repo: Biosimulant/models-observability
+  alias: state_compare_mon
+  manifest_path: models/observability-state-comparison-monitor/model.yaml
+  parameters:
+    max_points: 2000
+    min_dt: 1.0
+- repo: Biosimulant/models-observability
+  alias: state_metrics_mon
+  manifest_path: models/observability-state-metrics-monitor/model.yaml
+  parameters:
+    max_points: 2000
+    min_dt: 1.0
+runtime:
+  duration: 0.3
+  tick_dt: 0.001
+  initial_inputs: {}
+wiring:
+- from: layer_continuous_1.state
+  to:
+  - state_compare_mon.state_a
+  - state_metrics_mon.state_a
+- from: layer_continuous_2.state
+  to:
+  - state_compare_mon.state_b
+  - state_metrics_mon.state_b
+- from: layer_continuous_3.state
+  to:
+  - state_compare_mon.state_c
+  - state_metrics_mon.state_c
+scientific_context:
+  question: How do cortical circuit motifs transform and propagate activity?
+  mode: comparative
+  assumptions:
+  - Model implementations are used as published in their curated manifests without
+    biological reinterpretation.
+  - Time integration uses a shared global tick compatible with model min_dt constraints.
+  - Comparative (non-causal) mode is used because full deterministic IO coverage for
+    causal coupling was not satisfied.
+  expected_observables:
+  - Model output trajectories under shared runtime settings.
+  - Cross-model agreement/divergence in key state or metric signals.
+  - Relative behavior comparison without causal linkage claims.
+  limitations:
+  - No new biology is introduced beyond what upstream models encode.
+  - Cross-model semantic matching is rule-based and may under-connect uncertain routes.
+  provenance:
+  - 'neuroscience-neuroml-layer-6-continuous-non-accommodating-neurogliafo-nmlcl000932-model
+    :: neuroml_db:NMLCL000932 :: https://neuroml-db.org/model_info?model_id=NMLCL000932'
+  - 'neuroscience-neuroml-layer-6-continuous-non-accommodating-neurogliafo-nmlcl000933-model
+    :: neuroml_db:NMLCL000933 :: https://neuroml-db.org/model_info?model_id=NMLCL000933'
+  - 'neuroscience-neuroml-layer-6-continuous-non-accommodating-neurogliafo-nmlcl000934-model
+    :: neuroml_db:NMLCL000934 :: https://neuroml-db.org/model_info?model_id=NMLCL000934'
+  visualization_rationale: A dedicated monitor model receives all participating model
+    state streams (`state_a..state_d`) so trajectories can be compared in one place
+    without claiming causal coupling when IO semantics are incomplete.

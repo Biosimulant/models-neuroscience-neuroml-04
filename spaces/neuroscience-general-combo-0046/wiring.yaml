@@ -1,0 +1,36 @@
+modules:
+  main_olfactory_1:
+    class: src.main_olfactory_bulb_mitral_cell_3_nmlcl001131_model:MainOlfactoryBulbMitralCell3Nmlcl001131Model
+    args:
+      model_path: data/render_xml_file.nml
+  main_olfactory_2:
+    class: src.main_olfactory_bulb_mitral_cell_4_nmlcl001132_model:MainOlfactoryBulbMitralCell4Nmlcl001132Model
+    args:
+      model_path: data/render_xml_file.nml
+  mf_ampa_3:
+    class: src.mf_ampa_nmlsy000082_model:MfAmpaNmlsy000082Model
+    args:
+      model_path: data/render_xml_file.nml
+  state_compare_mon:
+    class: src.state_comparison_monitor:StateComparisonMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+  state_metrics_mon:
+    class: src.state_metrics_monitor:StateMetricsMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+wiring:
+- from: main_olfactory_1.state
+  to:
+  - state_compare_mon.state_a
+  - state_metrics_mon.state_a
+- from: main_olfactory_2.state
+  to:
+  - state_compare_mon.state_b
+  - state_metrics_mon.state_b
+- from: mf_ampa_3.state
+  to:
+  - state_compare_mon.state_c
+  - state_metrics_mon.state_c

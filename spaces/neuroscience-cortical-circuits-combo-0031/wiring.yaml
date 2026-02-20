@@ -1,0 +1,36 @@
+modules:
+  layer_continuous_1:
+    class: src.layer_6_continuous_irregular_nest_basket_cell_5_nmlcl000751_model:Layer6ContinuousIrregularNestBasketCell5Nmlcl000751Model
+    args:
+      model_path: data/render_xml_file.nml
+  layer_continuous_2:
+    class: src.layer_6_continuous_non_accommodating_bipolar_cel_nmlcl000897_model:Layer6ContinuousNonAccommodatingBipolarCelNmlcl000897Model
+    args:
+      model_path: data/render_xml_file.nml
+  layer_continuous_3:
+    class: src.layer_6_continuous_non_accommodating_bipolar_cel_nmlcl000898_model:Layer6ContinuousNonAccommodatingBipolarCelNmlcl000898Model
+    args:
+      model_path: data/render_xml_file.nml
+  state_compare_mon:
+    class: src.state_comparison_monitor:StateComparisonMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+  state_metrics_mon:
+    class: src.state_metrics_monitor:StateMetricsMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+wiring:
+- from: layer_continuous_1.state
+  to:
+  - state_compare_mon.state_a
+  - state_metrics_mon.state_a
+- from: layer_continuous_2.state
+  to:
+  - state_compare_mon.state_b
+  - state_metrics_mon.state_b
+- from: layer_continuous_3.state
+  to:
+  - state_compare_mon.state_c
+  - state_metrics_mon.state_c

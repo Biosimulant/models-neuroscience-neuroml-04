@@ -1,0 +1,44 @@
+modules:
+  nax_sodium_1:
+    class: src.nax_sodium_channel_for_axon_nmlch001610_model:NaxSodiumChannelForAxonNmlch001610Model
+    args:
+      model_path: data/render_xml_file.nml
+  nengoneuroml_2:
+    class: src.nengoneuroml_nengoneuroml_model:NengoneuromlNengoneuromlModel
+    args:
+      model_path: data/repo
+  netpyneshowcase_3:
+    class: src.netpyneshowcase_netpyneshowcase_model:NetpyneshowcaseNetpyneshowcaseModel
+    args:
+      model_path: data/repo
+  neuromlsbmlshowc_4:
+    class: src.neuromlsbmlshowcase_neuromlsbmlshowcase_model:NeuromlsbmlshowcaseNeuromlsbmlshowcaseModel
+    args:
+      model_path: data/repo
+  state_compare_mon:
+    class: src.state_comparison_monitor:StateComparisonMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+  state_metrics_mon:
+    class: src.state_metrics_monitor:StateMetricsMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+wiring:
+- from: nax_sodium_1.state
+  to:
+  - state_compare_mon.state_a
+  - state_metrics_mon.state_a
+- from: nengoneuroml_2.state
+  to:
+  - state_compare_mon.state_b
+  - state_metrics_mon.state_b
+- from: netpyneshowcase_3.state
+  to:
+  - state_compare_mon.state_c
+  - state_metrics_mon.state_c
+- from: neuromlsbmlshowc_4.state
+  to:
+  - state_compare_mon.state_d
+  - state_metrics_mon.state_d

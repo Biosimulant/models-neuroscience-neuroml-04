@@ -1,0 +1,44 @@
+modules:
+  nata_fast_1:
+    class: src.nata_fast_inactivating_sodium_nmlch000110_model:NataFastInactivatingSodiumNmlch000110Model
+    args:
+      model_path: data/render_xml_file.nml
+  nata_fast_2:
+    class: src.nata_fast_inactivating_sodium_nmlch001398_model:NataFastInactivatingSodiumNmlch001398Model
+    args:
+      model_path: data/render_xml_file.nml
+  nats_fast_3:
+    class: src.nats_fast_inactivating_sodium_nmlch000111_model:NatsFastInactivatingSodiumNmlch000111Model
+    args:
+      model_path: data/render_xml_file.nml
+  nats_fast_4:
+    class: src.nats_fast_inactivating_sodium_nmlch001490_model:NatsFastInactivatingSodiumNmlch001490Model
+    args:
+      model_path: data/render_xml_file.nml
+  state_compare_mon:
+    class: src.state_comparison_monitor:StateComparisonMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+  state_metrics_mon:
+    class: src.state_metrics_monitor:StateMetricsMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+wiring:
+- from: nata_fast_1.state
+  to:
+  - state_compare_mon.state_a
+  - state_metrics_mon.state_a
+- from: nata_fast_2.state
+  to:
+  - state_compare_mon.state_b
+  - state_metrics_mon.state_b
+- from: nats_fast_3.state
+  to:
+  - state_compare_mon.state_c
+  - state_metrics_mon.state_c
+- from: nats_fast_4.state
+  to:
+  - state_compare_mon.state_d
+  - state_metrics_mon.state_d

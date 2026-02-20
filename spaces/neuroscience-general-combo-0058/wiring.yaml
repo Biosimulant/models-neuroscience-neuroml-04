@@ -1,0 +1,44 @@
+modules:
+  nap_persistent_1:
+    class: src.nap_persistent_noninactivating_sodium_nmlch000164_model:NapPersistentNoninactivatingSodiumNmlch000164Model
+    args:
+      model_path: data/render_xml_file.nml
+  nap_persistent_2:
+    class: src.nap_persistent_sodium_nmlch000096_model:NapPersistentSodiumNmlch000096Model
+    args:
+      model_path: data/render_xml_file.nml
+  nap_persistent_3:
+    class: src.nap_persistent_sodium_nmlch000109_model:NapPersistentSodiumNmlch000109Model
+    args:
+      model_path: data/render_xml_file.nml
+  nap_persistent_4:
+    class: src.nap_persistent_sodium_nmlch000127_model:NapPersistentSodiumNmlch000127Model
+    args:
+      model_path: data/render_xml_file.nml
+  state_compare_mon:
+    class: src.state_comparison_monitor:StateComparisonMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+  state_metrics_mon:
+    class: src.state_metrics_monitor:StateMetricsMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+wiring:
+- from: nap_persistent_1.state
+  to:
+  - state_compare_mon.state_a
+  - state_metrics_mon.state_a
+- from: nap_persistent_2.state
+  to:
+  - state_compare_mon.state_b
+  - state_metrics_mon.state_b
+- from: nap_persistent_3.state
+  to:
+  - state_compare_mon.state_c
+  - state_metrics_mon.state_c
+- from: nap_persistent_4.state
+  to:
+  - state_compare_mon.state_d
+  - state_metrics_mon.state_d

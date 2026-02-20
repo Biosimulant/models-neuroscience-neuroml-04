@@ -1,0 +1,44 @@
+modules:
+  nmda_1:
+    class: src.nmda_nmlsy000083_model:NmdaNmlsy000083Model
+    args:
+      model_path: data/render_xml_file.nml
+  nmda_2:
+    class: src.nmda_nmlsy001658_model:NmdaNmlsy001658Model
+    args:
+      model_path: data/render_xml_file.nml
+  nmda_rspyr_3:
+    class: src.nmda_rspyr_deeplts_nmlsy000208_model:NmdaRspyrDeepltsNmlsy000208Model
+    args:
+      model_path: data/render_xml_file.nml
+  nmda_rspyr_4:
+    class: src.nmda_rspyr_supfs_nmlsy000209_model:NmdaRspyrSupfsNmlsy000209Model
+    args:
+      model_path: data/render_xml_file.nml
+  state_compare_mon:
+    class: src.state_comparison_monitor:StateComparisonMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+  state_metrics_mon:
+    class: src.state_metrics_monitor:StateMetricsMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+wiring:
+- from: nmda_1.state
+  to:
+  - state_compare_mon.state_a
+  - state_metrics_mon.state_a
+- from: nmda_2.state
+  to:
+  - state_compare_mon.state_b
+  - state_metrics_mon.state_b
+- from: nmda_rspyr_3.state
+  to:
+  - state_compare_mon.state_c
+  - state_metrics_mon.state_c
+- from: nmda_rspyr_4.state
+  to:
+  - state_compare_mon.state_d
+  - state_metrics_mon.state_d

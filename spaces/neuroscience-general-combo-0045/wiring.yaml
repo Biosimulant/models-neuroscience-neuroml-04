@@ -1,0 +1,36 @@
+modules:
+  low_threshold_1:
+    class: src.low_threshold_spiking_lts_nmlcl001126_model:LowThresholdSpikingLtsNmlcl001126Model
+    args:
+      model_path: data/render_xml_file.nml
+  main_olfactory_2:
+    class: src.main_olfactory_bulb_granule_cell_nmlcl001128_model:MainOlfactoryBulbGranuleCellNmlcl001128Model
+    args:
+      model_path: data/render_xml_file.nml
+  main_olfactory_3:
+    class: src.main_olfactory_bulb_mitral_cell_1_nmlcl001129_model:MainOlfactoryBulbMitralCell1Nmlcl001129Model
+    args:
+      model_path: data/render_xml_file.nml
+  state_compare_mon:
+    class: src.state_comparison_monitor:StateComparisonMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+  state_metrics_mon:
+    class: src.state_metrics_monitor:StateMetricsMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+wiring:
+- from: low_threshold_1.state
+  to:
+  - state_compare_mon.state_a
+  - state_metrics_mon.state_a
+- from: main_olfactory_2.state
+  to:
+  - state_compare_mon.state_b
+  - state_metrics_mon.state_b
+- from: main_olfactory_3.state
+  to:
+  - state_compare_mon.state_c
+  - state_metrics_mon.state_c

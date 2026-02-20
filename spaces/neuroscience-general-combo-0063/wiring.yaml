@@ -1,0 +1,44 @@
+modules:
+  neuromorpho_1:
+    class: src.neuromorpho_neuromorpho_model:NeuromorphoNeuromorphoModel
+    args:
+      model_path: data/repo
+  neuronshowcase_2:
+    class: src.neuronshowcase_neuronshowcase_model:NeuronshowcaseNeuronshowcaseModel
+    args:
+      model_path: data/repo
+  ninemlshowcase_3:
+    class: src.ninemlshowcase_ninemlshowcase_model:NinemlshowcaseNinemlshowcaseModel
+    args:
+      model_path: data/repo
+  nmda_frbpyr_4:
+    class: src.nmda_frbpyr_deeplts_nmlsy000184_model:NmdaFrbpyrDeepltsNmlsy000184Model
+    args:
+      model_path: data/render_xml_file.nml
+  state_compare_mon:
+    class: src.state_comparison_monitor:StateComparisonMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+  state_metrics_mon:
+    class: src.state_metrics_monitor:StateMetricsMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+wiring:
+- from: neuromorpho_1.state
+  to:
+  - state_compare_mon.state_a
+  - state_metrics_mon.state_a
+- from: neuronshowcase_2.state
+  to:
+  - state_compare_mon.state_b
+  - state_metrics_mon.state_b
+- from: ninemlshowcase_3.state
+  to:
+  - state_compare_mon.state_c
+  - state_metrics_mon.state_c
+- from: nmda_frbpyr_4.state
+  to:
+  - state_compare_mon.state_d
+  - state_metrics_mon.state_d

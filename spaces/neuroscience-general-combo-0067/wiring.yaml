@@ -1,0 +1,44 @@
+modules:
+  nmda_l6nt_1:
+    class: src.nmda_l6nt_suppyr_nmlsy000206_model:NmdaL6ntSuppyrNmlsy000206Model
+    args:
+      model_path: data/render_xml_file.nml
+  nmda_l6nt_2:
+    class: src.nmda_l6nt_tcr_nmlsy000207_model:NmdaL6ntTcrNmlsy000207Model
+    args:
+      model_path: data/render_xml_file.nml
+  nmda_3:
+    class: src.nmda_nmlsy000083_model:NmdaNmlsy000083Model
+    args:
+      model_path: data/render_xml_file.nml
+  nmda_4:
+    class: src.nmda_nmlsy001658_model:NmdaNmlsy001658Model
+    args:
+      model_path: data/render_xml_file.nml
+  state_compare_mon:
+    class: src.state_comparison_monitor:StateComparisonMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+  state_metrics_mon:
+    class: src.state_metrics_monitor:StateMetricsMonitor
+    args:
+      max_points: 2000
+      min_dt: 1.0
+wiring:
+- from: nmda_l6nt_1.state
+  to:
+  - state_compare_mon.state_a
+  - state_metrics_mon.state_a
+- from: nmda_l6nt_2.state
+  to:
+  - state_compare_mon.state_b
+  - state_metrics_mon.state_b
+- from: nmda_3.state
+  to:
+  - state_compare_mon.state_c
+  - state_metrics_mon.state_c
+- from: nmda_4.state
+  to:
+  - state_compare_mon.state_d
+  - state_metrics_mon.state_d
