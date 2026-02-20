@@ -41,6 +41,13 @@ def _split_entrypoint(entrypoint: str) -> tuple[str, str]:
     return module_name, attr
 
 
+def _clear_module_cache(module_name: str) -> None:
+    root = module_name.split(".", 1)[0]
+    to_delete = [k for k in sys.modules if k == root or k.startswith(f"{root}.")]
+    for k in to_delete:
+        sys.modules.pop(k, None)
+
+
 def main() -> int:
     errors: list[str] = []
     manifests = sorted(ROOT.rglob("model.yaml"))
@@ -60,6 +67,8 @@ def main() -> int:
             model_root = manifest_path.parent
             sys.path.insert(0, str(model_root))
             try:
+                _clear_module_cache(module_name)
+                importlib.invalidate_caches()
                 module = importlib.import_module(module_name)
                 if not hasattr(module, attr):
                     errors.append(f"{manifest_path}: entrypoint attribute not found: {entrypoint}")

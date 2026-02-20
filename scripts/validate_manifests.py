@@ -25,7 +25,6 @@ def _local_repo_aliases() -> set[str]:
     return {
         repo_name,
         f"Biosimulant/{repo_name}",
-        f"Demi-ob/{repo_name}",
     }
 
 
