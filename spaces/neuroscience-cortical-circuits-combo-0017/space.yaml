@@ -1,7 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: Cortical Circuits (COMBO_0017)'
-description: Neuroscience cortical circuits comparative space with 2 models, configured
-  as non-causal co-simulation.
+description: "Neuroscience Cortical Circuits (COMBO_0017) brings together layer_continuous_1, layer_continuous_2, state_compare_mon in a comparative space to examine how cortical circuit motifs transform and propagate activity. When you run it, you can compare participant trajectories through shared runtime settings and routed output streams."
 models:
 - repo: Biosimulant/models-neuroscience-neuroml-04
   alias: layer_continuous_1

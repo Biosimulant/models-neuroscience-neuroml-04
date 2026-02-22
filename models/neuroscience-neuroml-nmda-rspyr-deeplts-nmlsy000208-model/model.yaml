@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NmdaRspyrDeepltsNmlsy000208Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nmda Rspyr Deeplts Nmlsy000208Model models neuroscience nmda rspyr deeplts nmlsy000208 dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLSY000208), focused on neuroscience, neur. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience

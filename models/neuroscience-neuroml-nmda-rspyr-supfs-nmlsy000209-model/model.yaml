@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NmdaRspyrSupfsNmlsy000209Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nmda Rspyr Supfs Nmlsy000209Model represents neuroscience nmda rspyr supfs nmlsy000209 mechanisms from neuroml_db reference neuroml_db:NMLSY000209. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

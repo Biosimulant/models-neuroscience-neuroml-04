@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: OsbSamplesOsbsamplesModel'
-description: Some models to illustrate OSB/NeuroML features
+description: "Neuroscience Osb Samples Osbsamples Model captures neuroscience osb samples osbsamples behavior in the context of neuroscience, neuroml, opensourcebrain using a opensourcebrain-sourced OTHER model. When you run it, you can observe state and evaluate how the modeled system changes across runs."
 standard: other
 tags:
 - neuroscience

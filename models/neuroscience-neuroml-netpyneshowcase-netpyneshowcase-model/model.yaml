@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NetpyneshowcaseNetpyneshowcaseModel'
-description: NetPyNE & NeuroML interactions
+description: "Neuroscience Netpyneshowcase Netpyneshowcase Model captures neuroscience netpyneshowcase netpyneshowcase behavior in the context of neuroscience, neuroml, opensourcebrain using a opensourcebrain-sourced OTHER m. When you run it, you can observe state and evaluate how the modeled system changes across runs."
 standard: other
 tags:
 - neuroscience

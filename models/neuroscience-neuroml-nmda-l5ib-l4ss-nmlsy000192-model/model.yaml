@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NmdaL5ibL4ssNmlsy000192Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nmda L5ib L4ss Nmlsy000192Model represents neuroscience nmda l5ib l4ss nmlsy000192 mechanisms from neuroml_db reference neuroml_db:NMLSY000192. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

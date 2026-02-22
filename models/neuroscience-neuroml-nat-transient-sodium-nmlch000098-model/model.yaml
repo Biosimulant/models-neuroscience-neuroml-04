@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NatTransientSodiumNmlch000098Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nat Transient Sodium Nmlch000098Model represents neuroscience nat transient sodium nmlch000098 mechanisms from neuroml_db reference neuroml_db:NMLCH000098. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

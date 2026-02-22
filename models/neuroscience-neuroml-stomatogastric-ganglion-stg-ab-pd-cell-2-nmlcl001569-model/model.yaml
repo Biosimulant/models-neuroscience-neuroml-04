@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: StomatogastricGanglionStgAbPdCell2Nmlcl001569Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Stomatogastric Ganglion Stg Ab Pd Cell2Nmlcl001569Model models neuroscience stomatogastric ganglion stg ab pd dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCL001569), focuse. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience

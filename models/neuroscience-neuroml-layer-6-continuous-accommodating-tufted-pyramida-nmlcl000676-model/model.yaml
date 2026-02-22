@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: Layer6ContinuousAccommodatingTuftedPyramidaNmlcl000676Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Layer6Continuous Accommodating Tufted Pyramida Nmlcl000676Model represents core biological mechanisms from neuroml_db reference neuroml_db:NMLCL000676. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

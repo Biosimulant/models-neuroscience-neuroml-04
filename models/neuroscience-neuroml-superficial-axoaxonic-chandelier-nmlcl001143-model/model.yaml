@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: SuperficialAxoaxonicChandelierNmlcl001143Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Superficial Axoaxonic Chandelier Nmlcl001143Model models neuroscience superficial axoaxonic chandelier nmlcl001143 dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCL001143), f. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience

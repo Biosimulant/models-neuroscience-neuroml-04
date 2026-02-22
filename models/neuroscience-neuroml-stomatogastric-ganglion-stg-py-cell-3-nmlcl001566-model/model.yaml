@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: StomatogastricGanglionStgPyCell3Nmlcl001566Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Stomatogastric Ganglion Stg Py Cell3Nmlcl001566Model captures neuroscience stomatogastric ganglion stg py cell behavior in the context of neuroscience, neuroml, neuroml_db using a neuroml_db-source. When you run it, you can observe state and evaluate how the modeled system changes across runs."
 standard: other
 tags:
 - neuroscience

@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: PrimaryVisualAreaLayer5Aspiny469801569Nmlcl001476Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Primary Visual Area Layer5Aspiny469801569Nmlcl001476Model represents neuroscience primary visual area layer 5 mechanisms from neuroml_db reference neuroml_db:NMLCL001476. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

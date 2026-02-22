@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: PynnshowcasePynnshowcaseModel'
-description: A repository for testing interactions/conversions between NeuroML & PyNN
+description: "A repository for testing interactions/conversions between NeuroML & PyNN. It can be used to explore neural activity dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - neuroscience

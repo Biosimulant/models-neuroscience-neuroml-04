@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NinemlshowcaseNinemlshowcaseModel'
-description: Examples of models in NineML and conversion to/from NeuroML/LEMS
+description: "Examples of models in NineML and conversion to/from NeuroML/LEMS. It can be used to explore neural activity dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - neuroscience

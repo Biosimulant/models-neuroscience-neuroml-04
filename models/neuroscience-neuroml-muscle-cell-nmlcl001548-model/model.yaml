@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: MuscleCellNmlcl001548Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Muscle Cell Nmlcl001548Model represents neuroscience muscle cell nmlcl001548 mechanisms from neuroml_db reference neuroml_db:NMLCL001548. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

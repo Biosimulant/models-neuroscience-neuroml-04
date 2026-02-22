@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: MousePrimaryMotorCortexM1Nmlnt001656Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Mouse Primary Motor Cortex M1Nmlnt001656Model captures neuroscience mouse primary motor cortex m1 behavior in the context of neuroscience, neuroml, neuroml_db using a neuroml_db-sourced OTHER model. When you run it, you can observe state and evaluate how the modeled system changes across runs."
 standard: other
 tags:
 - neuroscience

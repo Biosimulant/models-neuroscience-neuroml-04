@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: MainOlfactoryBulbGranuleCellNmlcl001128Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Main Olfactory Bulb Granule Cell Nmlcl001128Model captures neuroscience main olfactory bulb granule cell behavior in the context of neuroscience, neuroml, neuroml_db using a neuroml_db-sourced OTHE. When you run it, you can observe state and evaluate how the modeled system changes across runs."
 standard: other
 tags:
 - neuroscience

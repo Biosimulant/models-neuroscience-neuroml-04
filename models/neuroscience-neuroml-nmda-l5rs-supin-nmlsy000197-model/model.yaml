@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NmdaL5rsSupinNmlsy000197Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nmda L5rs Supin Nmlsy000197Model models neuroscience nmda l5rs supin nmlsy000197 dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLSY000197), focused on neuroscience, neuroml, n. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience

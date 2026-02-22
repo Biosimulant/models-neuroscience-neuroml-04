@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: Osbv2ShowcaseOsbv2showcaseModel'
-description: Showcasing some of the features of OSBv2
+description: "Neuroscience Osbv2Showcase Osbv2showcase Model models neuroscience osbv2 showcase osbv2showcase dynamics as a OTHER simulation curated from opensourcebrain (opensourcebrain:OSBv2_Showcase), focused on neuroscie. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience

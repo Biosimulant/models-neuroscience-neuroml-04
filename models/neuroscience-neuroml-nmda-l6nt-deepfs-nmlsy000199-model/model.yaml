@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NmdaL6ntDeepfsNmlsy000199Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nmda L6nt Deepfs Nmlsy000199Model models neuroscience nmda l6nt deepfs nmlsy000199 dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLSY000199), focused on neuroscience, neuroml. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience

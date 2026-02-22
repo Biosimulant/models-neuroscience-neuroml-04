@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: PassiveLeakNmlch000016Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Passive Leak Nmlch000016Model represents neuroscience passive leak nmlch000016 mechanisms from neuroml_db reference neuroml_db:NMLCH000016. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

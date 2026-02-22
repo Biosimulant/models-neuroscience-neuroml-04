@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: SbmlshowcaseSbmlshowcaseModel'
-description: OSB showcase of interactions between SBML and NeuroML
+description: "OSB showcase of interactions between SBML and NeuroML. It can be used to explore neural activity dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - neuroscience

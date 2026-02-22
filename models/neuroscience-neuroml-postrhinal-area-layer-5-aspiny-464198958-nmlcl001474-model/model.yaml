@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: PostrhinalAreaLayer5Aspiny464198958Nmlcl001474Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Postrhinal Area Layer5Aspiny464198958Nmlcl001474Model captures neuroscience postrhinal area layer 5 aspiny behavior in the context of neuroscience, neuroml, neuroml_db using a neuroml_db-sourced OT. When you run it, you can observe state and evaluate how the modeled system changes across runs."
 standard: other
 tags:
 - neuroscience

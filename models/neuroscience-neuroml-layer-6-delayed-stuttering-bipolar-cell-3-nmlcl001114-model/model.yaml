@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: Layer6DelayedStutteringBipolarCell3Nmlcl001114Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Layer6Delayed Stuttering Bipolar Cell3Nmlcl001114Model captures neuroscience layer 6 delayed stuttering bipolar behavior in the context of neuroscience, neuroml, neuroml_db using a neuroml_db-sourc. When you run it, you can observe state and evaluate how the modeled system changes across runs."
 standard: other
 tags:
 - neuroscience

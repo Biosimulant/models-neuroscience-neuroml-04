@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NafFastTransientInactivatingSodiumNmlch000166Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Naf Fast Transient Inactivating Sodium Nmlch000166Model models neuroscience naf fast transient inactivating sodium dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCH000166), f. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience

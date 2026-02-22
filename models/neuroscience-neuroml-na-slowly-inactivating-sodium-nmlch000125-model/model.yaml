@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NaSlowlyInactivatingSodiumNmlch000125Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Na Slowly Inactivating Sodium Nmlch000125Model captures neuroscience na slowly inactivating sodium nmlch000125 behavior in the context of neuroscience, neuroml, neuroml_db using a neuroml_db-source. When you run it, you can observe state and evaluate how the modeled system changes across runs."
 standard: other
 tags:
 - neuroscience

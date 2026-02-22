@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NmdaL4ssInNmlsy000187Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nmda L4ss In Nmlsy000187Model represents neuroscience nmda l4ss in nmlsy000187 mechanisms from neuroml_db reference neuroml_db:NMLSY000187. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

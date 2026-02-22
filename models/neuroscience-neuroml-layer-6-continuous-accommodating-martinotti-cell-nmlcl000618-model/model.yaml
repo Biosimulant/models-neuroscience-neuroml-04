@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: Layer6ContinuousAccommodatingMartinottiCellNmlcl000618Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Layer6Continuous Accommodating Martinotti Cell Nmlcl000618Model models core biological dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCL000618), focused on neuroscience, neur. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience

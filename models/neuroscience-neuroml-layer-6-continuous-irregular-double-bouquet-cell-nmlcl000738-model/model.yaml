@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: Layer6ContinuousIrregularDoubleBouquetCellNmlcl000738Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Layer6Continuous Irregular Double Bouquet Cell Nmlcl000738Model represents core biological mechanisms from neuroml_db reference neuroml_db:NMLCL000738. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

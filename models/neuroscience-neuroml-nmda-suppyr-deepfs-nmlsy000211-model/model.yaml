@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NmdaSuppyrDeepfsNmlsy000211Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nmda Suppyr Deepfs Nmlsy000211Model represents neuroscience nmda suppyr deepfs nmlsy000211 mechanisms from neuroml_db reference neuroml_db:NMLSY000211. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

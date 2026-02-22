@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: XppshowcaseXppshowcaseModel'
-description: Showcase of XPP(AUT) models interacting with NeuroML2/LEMS
+description: "Showcase of XPP(AUT) models interacting with NeuroML2/LEMS. It can be used to explore neural activity dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - neuroscience

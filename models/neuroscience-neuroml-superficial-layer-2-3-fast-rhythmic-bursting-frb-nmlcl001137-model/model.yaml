@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: SuperficialLayer23FastRhythmicBurstingFrbNmlcl001137Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Superficial Layer23Fast Rhythmic Bursting Frb Nmlcl001137Model represents core biological mechanisms from neuroml_db reference neuroml_db:NMLCL001137. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

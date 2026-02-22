@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NmdaL5rsSuppyrNmlsy000198Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nmda L5rs Suppyr Nmlsy000198Model represents neuroscience nmda l5rs suppyr nmlsy000198 mechanisms from neuroml_db reference neuroml_db:NMLSY000198. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

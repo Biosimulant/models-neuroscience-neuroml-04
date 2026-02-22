@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NapPersistentSodiumNmlch001480Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nap Persistent Sodium Nmlch001480Model represents neuroscience nap persistent sodium nmlch001480 mechanisms from neuroml_db reference neuroml_db:NMLCH001480. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

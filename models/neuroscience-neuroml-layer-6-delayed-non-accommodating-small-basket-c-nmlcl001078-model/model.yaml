@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: Layer6DelayedNonAccommodatingSmallBasketCNmlcl001078Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Layer6Delayed Non Accommodating Small Basket CNmlcl001078Model represents core biological mechanisms from neuroml_db reference neuroml_db:NMLCL001078. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

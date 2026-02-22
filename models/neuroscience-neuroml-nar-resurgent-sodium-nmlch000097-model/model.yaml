@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NarResurgentSodiumNmlch000097Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nar Resurgent Sodium Nmlch000097Model represents neuroscience nar resurgent sodium nmlch000097 mechanisms from neuroml_db reference neuroml_db:NMLCH000097. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NmdaL6ntTcrNmlsy000207Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nmda L6nt Tcr Nmlsy000207Model captures neuroscience nmda l6nt tcr nmlsy000207 behavior in the context of neuroscience, neuroml, neuroml_db using a neuroml_db-sourced OTHER model. When you run it, you can observe state and evaluate how the modeled system changes across runs."
 standard: other
 tags:
 - neuroscience

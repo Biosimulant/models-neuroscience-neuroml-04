@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NestshowcaseNestshowcaseModel'
-description: Mapping NeuroML2/LEMS to NEST
+description: "Neuroscience Nestshowcase Nestshowcase Model represents neuroscience nestshowcase nestshowcase mechanisms from opensourcebrain reference opensourcebrain:NESTShowcase. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: PrimaryVisualAreaLayer4Spiny386049446Nmlcl001462Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Primary Visual Area Layer4Spiny386049446Nmlcl001462Model models neuroscience primary visual area layer 4 dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCL001462), focused on. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience

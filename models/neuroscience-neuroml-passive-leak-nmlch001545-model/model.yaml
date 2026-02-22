@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: PassiveLeakNmlch001545Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Passive Leak Nmlch001545Model models neuroscience passive leak nmlch001545 dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCH001545), focused on neuroscience, neuroml, neuroml. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience

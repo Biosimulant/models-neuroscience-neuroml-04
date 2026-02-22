@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: MainOlfactoryBulbMitralCell4Nmlcl001132Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Main Olfactory Bulb Mitral Cell4Nmlcl001132Model models neuroscience main olfactory bulb mitral cell dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCL001132), focused on neur. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience

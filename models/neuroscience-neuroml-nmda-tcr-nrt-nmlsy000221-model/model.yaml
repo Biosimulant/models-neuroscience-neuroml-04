@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NmdaTcrNrtNmlsy000221Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nmda Tcr Nrt Nmlsy000221Model models neuroscience nmda tcr nrt nmlsy000221 dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLSY000221), focused on neuroscience, neuroml, neuroml. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience

@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NafInactivatingFastSodiumNmlch000023Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Naf Inactivating Fast Sodium Nmlch000023Model represents neuroscience naf inactivating fast sodium nmlch000023 mechanisms from neuroml_db reference neuroml_db:NMLCH000023. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

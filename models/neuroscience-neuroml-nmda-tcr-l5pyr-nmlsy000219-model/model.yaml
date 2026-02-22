@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NmdaTcrL5pyrNmlsy000219Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nmda Tcr L5pyr Nmlsy000219Model represents neuroscience nmda tcr l5pyr nmlsy000219 mechanisms from neuroml_db reference neuroml_db:NMLSY000219. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:
 - neuroscience

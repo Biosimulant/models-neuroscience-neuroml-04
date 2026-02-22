@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NaxSodiumChannelForAxonNmlch001610Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Nax Sodium Channel For Axon Nmlch001610Model models neuroscience nax sodium channel for axon dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCH001610), focused on neuroscience. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience

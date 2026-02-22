@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: Layer6ContinuousIrregularMartinottiCell2Nmlcl000743Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Layer6Continuous Irregular Martinotti Cell2Nmlcl000743Model models core biological dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCL000743), focused on neuroscience, neuroml. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience

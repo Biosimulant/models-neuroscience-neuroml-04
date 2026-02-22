@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Neuroscience: NaSodiumNmlch001628Model'
-description: Faithful wrapper of upstream NEUROML model.
+description: "Neuroscience Na Sodium Nmlch001628Model models neuroscience na sodium nmlch001628 dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCH001628), focused on neuroscience, neuroml, neuroml_db. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - neuroscience
