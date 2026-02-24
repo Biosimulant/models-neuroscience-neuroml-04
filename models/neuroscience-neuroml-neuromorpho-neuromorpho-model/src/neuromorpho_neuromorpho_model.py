@@ -30,7 +30,15 @@ class NeuromlNeuromorpho(biosim.BioModule):
     def setup(self, config: Optional[Dict[str, Any]] = None) -> None:
         from pyneuroml import pynml
 
-        self._nml_doc = pynml.read_neuroml2_file(str(self._model_path))
+        model_file = self._model_path
+        if model_file.is_dir():
+            candidates = (
+                list(model_file.rglob("*.nml"))
+                + list(model_file.rglob("*.xml"))
+            )
+            if candidates:
+                model_file = candidates[0]
+        self._nml_doc = pynml.read_neuroml2_file(str(model_file))
         self._t = 0.0
 
     def reset(self) -> None:
