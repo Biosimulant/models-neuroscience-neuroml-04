@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: Layer6ContinuousNonAccommodatingNestBasketNmlcl000927Model'
+title: "Layer 6 Continuous Non-accommodating Nest Basket Cell (1)"
 description: "Neuroscience Layer6Continuous Non Accommodating Nest Basket Nmlcl000927Model represents core biological mechanisms from neuroml_db reference neuroml_db:NMLCL000927. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:

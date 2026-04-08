@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: Layer6ContinuousAccommodatingNeurogliaformCNmlcl000629Model'
+title: "Layer 6 Continuous Accommodating Neurogliaform Cell (3)"
 description: "Neuroscience Layer6Continuous Accommodating Neurogliaform CNmlcl000629Model represents core biological mechanisms from neuroml_db reference neuroml_db:NMLCL000629. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:

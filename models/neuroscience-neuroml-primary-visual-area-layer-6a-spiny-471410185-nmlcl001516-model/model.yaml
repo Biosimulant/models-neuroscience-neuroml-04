@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: PrimaryVisualAreaLayer6aSpiny471410185Nmlcl001516Model'
+title: "Primary visual area layer 6a spiny 471410185"
 description: "Neuroscience Primary Visual Area Layer6a Spiny471410185Nmlcl001516Model represents core biological mechanisms from neuroml_db reference neuroml_db:NMLCL001516. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:

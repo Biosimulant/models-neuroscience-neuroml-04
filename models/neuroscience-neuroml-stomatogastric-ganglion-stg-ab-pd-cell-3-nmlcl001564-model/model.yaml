@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: StomatogastricGanglionStgAbPdCell3Nmlcl001564Model'
+title: "Stomatogastric Ganglion (STG) AB/PD cell (3)"
 description: "Neuroscience Stomatogastric Ganglion Stg Ab Pd Cell3Nmlcl001564Model models neuroscience stomatogastric ganglion stg ab pd dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCL001564), focuse. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:

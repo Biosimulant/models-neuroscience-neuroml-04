@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: NafFastTransientInactivatingSodiumNmlch000157Model'
+title: "NaF Fast Transient Inactivating Sodium"
 description: "Neuroscience Naf Fast Transient Inactivating Sodium Nmlch000157Model models neuroscience naf fast transient inactivating sodium dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCH000157), f. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:

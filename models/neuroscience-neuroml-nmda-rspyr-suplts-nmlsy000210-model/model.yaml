@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: NmdaRspyrSupltsNmlsy000210Model'
+title: "NMDA RSPyr SupLTS"
 description: "Neuroscience Nmda Rspyr Suplts Nmlsy000210Model represents neuroscience nmda rspyr suplts nmlsy000210 mechanisms from neuroml_db reference neuroml_db:NMLSY000210. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:

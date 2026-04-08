@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: PrimaryVisualAreaLayer5Spiny478888052Nmlcl001495Model'
+title: "Primary visual area layer 5 spiny 478888052"
 description: "Neuroscience Primary Visual Area Layer5Spiny478888052Nmlcl001495Model models neuroscience primary visual area layer 5 dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCL001495), focused on. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:

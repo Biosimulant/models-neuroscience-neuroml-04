@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: Layer6ContinuousStutteringNeurogliaformCellNmlcl000994Model'
+title: "Layer 6 Continuous Stuttering Neurogliaform Cell (3)"
 description: "Neuroscience Layer6Continuous Stuttering Neurogliaform Cell Nmlcl000994Model models core biological dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCL000994), focused on neuroscience, neur. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:

@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: PrimaryVisualAreaLayer23Spiny318808427Nmlcl001535Model'
+title: "Primary visual area layer 2/3 spiny 318808427"
 description: "Neuroscience Primary Visual Area Layer23Spiny318808427Nmlcl001535Model represents neuroscience primary visual area layer 2 mechanisms from neuroml_db reference neuroml_db:NMLCL001535. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:

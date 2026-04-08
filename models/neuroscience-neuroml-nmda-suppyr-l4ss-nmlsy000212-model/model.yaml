@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: NmdaSuppyrL4ssNmlsy000212Model'
+title: "NMDA SupPyr L4SS"
 description: "Neuroscience Nmda Suppyr L4ss Nmlsy000212Model represents neuroscience nmda suppyr l4ss nmlsy000212 mechanisms from neuroml_db reference neuroml_db:NMLSY000212. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:

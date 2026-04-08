@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: Layer6ContinuousAccommodatingTuftedPyramidaNmlcl000669Model'
+title: "Layer 6 Continuous Accommodating Tufted Pyramidal Cell with apical dendrites terminating in layer 1 (3)"
 description: "Neuroscience Layer6Continuous Accommodating Tufted Pyramida Nmlcl000669Model represents core biological mechanisms from neuroml_db reference neuroml_db:NMLCL000669. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:

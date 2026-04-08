@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: NaSodiumChannelComponentNmlcp001647Model'
+title: "Na Sodium Channel Component"
 description: "Neuroscience Na Sodium Channel Component Nmlcp001647Model represents neuroscience na sodium channel component nmlcp001647 mechanisms from neuroml_db reference neuroml_db:NMLCP001647. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:

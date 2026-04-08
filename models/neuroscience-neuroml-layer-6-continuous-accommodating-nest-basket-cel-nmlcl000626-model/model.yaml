@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: Layer6ContinuousAccommodatingNestBasketCelNmlcl000626Model'
+title: "Layer 6 Continuous Accommodating Nest Basket Cell (5)"
 description: "Neuroscience Layer6Continuous Accommodating Nest Basket Cel Nmlcl000626Model models core biological dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCL000626), focused on neuroscience, neur. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:

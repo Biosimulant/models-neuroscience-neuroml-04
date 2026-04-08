@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: OsbDocumentationOsbdocumentationModel'
+title: "OSB_Documentation"
 description: "Source repository for documentation at Open Source Brain. It can be used to explore neural activity dynamics and compare response patterns across conditions."
 standard: other
 tags:

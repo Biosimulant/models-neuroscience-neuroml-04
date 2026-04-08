@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: Layer6ContinuousAccommodatingPyramidalCellNmlcl000661Model'
+title: "Layer 6 Continuous Accommodating Pyramidal Cell with bipolar apical-like dendrites (5)"
 description: "Neuroscience Layer6Continuous Accommodating Pyramidal Cell Nmlcl000661Model models core biological dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCL000661), focused on neuroscience, neuro. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:

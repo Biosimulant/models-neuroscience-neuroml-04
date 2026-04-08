@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: NatsFastInactivatingSodiumNmlch001490Model'
+title: "NaTs Fast Inactivating Sodium"
 description: "Neuroscience Nats Fast Inactivating Sodium Nmlch001490Model represents neuroscience nats fast inactivating sodium nmlch001490 mechanisms from neuroml_db reference neuroml_db:NMLCH001490. When you run it, you can inspect state and compare temporal behavior between baseline and adjusted inputs."
 standard: other
 tags:

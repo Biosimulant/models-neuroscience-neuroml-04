@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: NeuromorphoNeuromorphoModel'
+title: "NeuroMorpho"
 description: "Set of example morphologies taken from NeuroMorpho.org in NeuroML format. It can be used to explore neural activity dynamics and compare response patterns across conditions."
 standard: other
 tags:

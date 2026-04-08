@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: VisualCortexLayer23PyramidalCellStimulateNmlnt001592Model'
+title: "Visual Cortex Layer 2/3 Pyramidal Cell (Stimulated)"
 description: "Neuroscience Visual Cortex Layer23Pyramidal Cell Stimulate Nmlnt001592Model captures core biological behavior in the context of neuroscience, neuroml, neuroml_db using a neuroml_db-sourced OTHER model. When you run it, you can observe state and evaluate how the modeled system changes across runs."
 standard: other
 tags:

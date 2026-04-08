@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: PrimaryVisualAreaLayer23Aspiny478107198Nmlcl001452Model'
+title: "Primary visual area layer 2/3 aspiny 478107198"
 description: "Neuroscience Primary Visual Area Layer23Aspiny478107198Nmlcl001452Model models core biological dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCL001452), focused on neuroscience, neuroml. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:

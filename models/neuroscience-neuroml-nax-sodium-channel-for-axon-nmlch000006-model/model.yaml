@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: NaxSodiumChannelForAxonNmlch000006Model'
+title: "NaX Sodium Channel for Axon"
 description: "Neuroscience Nax Sodium Channel For Axon Nmlch000006Model captures neuroscience nax sodium channel for axon behavior in the context of neuroscience, neuroml, neuroml_db using a neuroml_db-sourced OTHER model. When you run it, you can observe state and evaluate how the modeled system changes across runs."
 standard: other
 tags:

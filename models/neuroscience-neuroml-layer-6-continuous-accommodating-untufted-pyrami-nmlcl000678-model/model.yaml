@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Neuroscience: Layer6ContinuousAccommodatingUntuftedPyramiNmlcl000678Model'
+title: "Layer 6 Continuous Accommodating Untufted Pyramidal Cell (2)"
 description: "Neuroscience Layer6Continuous Accommodating Untufted Pyrami Nmlcl000678Model models core biological dynamics as a OTHER simulation curated from neuroml_db (neuroml_db:NMLCL000678), focused on neuroscience, neur. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
