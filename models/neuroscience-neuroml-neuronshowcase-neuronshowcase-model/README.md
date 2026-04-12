@@ -16,9 +16,8 @@ This model was auto-generated from the opensourcebrain repository.
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/neuroscience-neuroml-neuronshowcase-neuronshowcase-model
     alias: model
-    manifest_path: models/neuroscience-neuroml-neuronshowcase-neuronshowcase-model/model.yaml
 ```
 
 ## Tags

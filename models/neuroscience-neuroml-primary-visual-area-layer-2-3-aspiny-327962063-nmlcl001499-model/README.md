@@ -16,9 +16,8 @@ This model was auto-generated from the neuroml_db repository.
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/neuroscience-neuroml-primary-visual-area-layer-2-3-aspiny-327962063-nmlcl001499-model
     alias: model
-    manifest_path: models/neuroscience-neuroml-primary-visual-area-layer-2-3-aspiny-327962063-nmlcl001499-model/model.yaml
 ```
 
 ## Tags

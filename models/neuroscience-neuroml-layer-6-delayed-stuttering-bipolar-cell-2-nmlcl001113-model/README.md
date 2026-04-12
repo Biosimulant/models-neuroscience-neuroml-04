@@ -16,9 +16,8 @@ This model was auto-generated from the neuroml_db repository.
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/neuroscience-neuroml-layer-6-delayed-stuttering-bipolar-cell-2-nmlcl001113-model
     alias: model
-    manifest_path: models/neuroscience-neuroml-layer-6-delayed-stuttering-bipolar-cell-2-nmlcl001113-model/model.yaml
 ```
 
 ## Tags

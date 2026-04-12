@@ -16,9 +16,8 @@ This model was auto-generated from the neuroml_db repository.
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/neuroscience-neuroml-posteromedial-visual-area-layer-4-spiny-48591204-nmlcl001439-model
     alias: model
-    manifest_path: models/neuroscience-neuroml-posteromedial-visual-area-layer-4-spiny-48591204-nmlcl001439-model/model.yaml
 ```
 
 ## Tags

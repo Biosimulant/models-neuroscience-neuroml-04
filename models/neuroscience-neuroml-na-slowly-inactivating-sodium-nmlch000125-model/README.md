@@ -16,9 +16,8 @@ This model was auto-generated from the neuroml_db repository.
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/neuroscience-neuroml-na-slowly-inactivating-sodium-nmlch000125-model
     alias: model
-    manifest_path: models/neuroscience-neuroml-na-slowly-inactivating-sodium-nmlch000125-model/model.yaml
 ```
 
 ## Tags

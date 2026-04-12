@@ -16,9 +16,8 @@ This model was auto-generated from the neuroml_db repository.
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/neuroscience-neuroml-stomatogastric-ganglion-stg-py-cell-6-nmlcl001567-model
     alias: model
-    manifest_path: models/neuroscience-neuroml-stomatogastric-ganglion-stg-py-cell-6-nmlcl001567-model/model.yaml
 ```
 
 ## Tags

@@ -16,9 +16,8 @@ This model was auto-generated from the neuroml_db repository.
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/neuroscience-neuroml-pyloric-network-figs-2a-b-nmlnt001576-model
     alias: model
-    manifest_path: models/neuroscience-neuroml-pyloric-network-figs-2a-b-nmlnt001576-model/model.yaml
 ```
 
 ## Tags
